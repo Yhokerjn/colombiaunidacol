@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mando Táctico - ADMIN - ColombiaUnida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: monospace;
+            overflow-x: hidden;
+        }
+
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.8) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        .input-stark {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid #334155;
+            color: white;
+            transition: all 0.3s ease;
+            padding: 10px;
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .input-stark:focus {
+            border-color: #eab308;
+            outline: none;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen p-4 md:p-8 relative">
+    <div class="grid-bg"></div>
+
+    <div class="w-full max-w-7xl mx-auto">
+        <div class="mb-8 border-l-4 border-yellow-500 pl-4 glass-card">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-black text-yellow-500">ACCESO RESTRINGIDO - MANDO TÁCTICO</h1>
+                    <p class="text-slate-400 mt-1">Consola maestra para inyectar datos, fotos y purgar registros en
+                        tiempo real.</p>
+                </div>
+                <div class="text-right">
+                    <a href="index.html"
+                        class="text-sky-400 text-sm font-bold uppercase hover:text-sky-300 transition-colors border border-sky-500/50 bg-sky-900/30 px-4 py-2 rounded-lg inline-block">
+                        &larr; Volver a Interfaz Pública
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            <!-- PANEL ACOPIO -->
+            <div class="glass-card border-t-4 border-t-emerald-500">
+                <h2 class="text-xl font-bold text-emerald-400 mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                    PUBLICAR CENTRO DE ACOPIO
+                </h2>
+                <form id="formAcopio">
+                    <label class="text-xs text-slate-400 font-bold">Nombre del Lugar / Entidad</label>
+                    <input type="text" id="ac_nombre" required class="input-stark"
+                        placeholder="Ej. Cruz Roja Seccional...">
+
+                    <label class="text-xs text-slate-400 font-bold">Ciudad</label>
+                    <input type="text" id="ac_ciudad" required class="input-stark" placeholder="Ej. Cali">
+
+                    <label class="text-xs text-slate-400 font-bold">Barrio y Dirección Exacta</label>
+                    <input type="text" id="ac_direccion" required class="input-stark"
+                        placeholder="Ej. Barrio El Templete...">
+
+                    <label class="text-xs text-slate-400 font-bold">Descripción Adicional / Horario</label>
+                    <textarea id="ac_desc" rows="2" class="input-stark"
+                        placeholder="Horarios de atención, necesidades..."></textarea>
+
+                    <label class="text-xs text-slate-400 font-bold text-emerald-400">Fotografía del Acopio
+                        (Opcional)</label>
+                    <input type="file" id="ac_foto" accept="image/*" class="input-stark text-sm">
+
+                    <button type="submit"
+                        class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg mt-2 transition-colors">PUBLICAR
+                        ACOPIO EN LA RED</button>
+                </form>
+            </div>
+
+            <!-- PANEL HOSPEDAJE -->
+            <div class="glass-card border-t-4 border-t-purple-500">
+                <h2 class="text-xl font-bold text-purple-400 mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                    PUBLICAR LUGAR DE HOSPEDAJE
+                </h2>
+                <form id="formHospedaje">
+                    <label class="text-xs text-slate-400 font-bold">Nombre del Refugio / Familia / Empresa</label>
+                    <input type="text" id="ho_nombre" required class="input-stark"
+                        placeholder="Ej. Colegio San José / Familia Pérez">
+
+                    <label class="text-xs text-slate-400 font-bold">Ciudad</label>
+                    <input type="text" id="ho_ciudad" required class="input-stark" placeholder="Ej. Bogotá">
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="text-xs text-slate-400 font-bold">Dirección / Sector</label>
+                            <input type="text" id="ho_direccion" required class="input-stark"
+                                placeholder="Barrio / Localidad">
+                        </div>
+                        <div>
+                            <label class="text-xs text-slate-400 font-bold">Capacidad (Personas)</label>
+                            <input type="text" id="ho_capacidad" required class="input-stark" placeholder="Ej. 15">
+                        </div>
+                    </div>
+
+                    <label class="text-xs text-slate-400 font-bold">Teléfono de Contacto Responsable</label>
+                    <input type="text" id="ho_contacto" required class="input-stark"
+                        placeholder="Obligatorio para que la gente llame">
+
+                    <label class="text-xs text-slate-400 font-bold">Descripción (Reglas, mascotas, etc.)</label>
+                    <textarea id="ho_desc" rows="2" class="input-stark"
+                        placeholder="Se aceptan mascotas, incluye alimentación..."></textarea>
+
+                    <label class="text-xs text-slate-400 font-bold text-purple-400">Fotografía del Hospedaje
+                        (Opcional)</label>
+                    <input type="file" id="ho_foto" accept="image/*" class="input-stark text-sm">
+
+                    <button type="submit"
+                        class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded-lg mt-2 transition-colors">PUBLICAR
+                        HOSPEDAJE EN LA RED</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- RADARES DE ADMINISTRACIÓN -->
+        <h2 class="text-2xl font-black text-white mb-6 border-b border-slate-700 pb-2 flex items-center gap-3">
+            <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+            </svg>
+            BASE DE DATOS ACTIVA (ADMINISTRAR)
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="glass-card flex flex-col h-[500px] border-t-4 border-t-sky-500 p-4">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-700">
+                    <h3 class="text-sky-400 font-bold uppercase tracking-widest text-sm">Personas Reportadas</h3>
+                    <span id="countPersonas" class="text-xs bg-sky-900/50 text-sky-400 px-2 py-1 rounded">0</span>
+                </div>
+                <div id="adminPersonas" class="flex-1 overflow-y-auto space-y-3 pr-2 scrollbar-hide"></div>
+            </div>
+
+            <div class="glass-card flex flex-col h-[500px] border-t-4 border-t-emerald-500 p-4">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-700">
+                    <h3 class="text-emerald-400 font-bold uppercase tracking-widest text-sm">Centros de Acopio</h3>
+                    <span id="countAcopios"
+                        class="text-xs bg-emerald-900/50 text-emerald-400 px-2 py-1 rounded">0</span>
+                </div>
+                <div id="adminAcopios" class="flex-1 overflow-y-auto space-y-3 pr-2 scrollbar-hide"></div>
+            </div>
+
+            <div class="glass-card flex flex-col h-[500px] border-t-4 border-t-purple-500 p-4">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-700">
+                    <h3 class="text-purple-400 font-bold uppercase tracking-widest text-sm">Hospedajes / Refugios</h3>
+                    <span id="countHospedajes"
+                        class="text-xs bg-purple-900/50 text-purple-400 px-2 py-1 rounded">0</span>
+                </div>
+                <div id="adminHospedajes" class="flex-1 overflow-y-auto space-y-3 pr-2 scrollbar-hide"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOTOR FIREBASE STARK-V25 ADMIN + STORAGE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getDatabase, ref, push, set, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+        import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD-31_2Z9fazqSnMfk7QL_3sQQ1Y0tuzec",
+            authDomain: "colombiaunida-228c9.firebaseapp.com",
+            databaseURL: "https://colombiaunida-228c9-default-rtdb.firebaseio.com",
+            projectId: "colombiaunida-228c9",
+            storageBucket: "colombiaunida-228c9.firebasestorage.app",
+            messagingSenderId: "561377523862",
+            appId: "1:561377523862:web:98f495acfa97d81c122ab7"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const storage = getStorage(app);
+
+        window.borrarRegistro = async function (tabla, id) {
+            if (confirm('⚠️ ALERTA TÁCTICA: ¿Eliminar permanentemente este registro?')) {
+                try {
+                    await remove(ref(db, tabla + '/' + id));
+                } catch (error) { alert('Error al purgar.'); console.error(error); }
+            }
+        };
+
+        function escapeHtml(str) { return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+        function ordenarPorFecha(dataObj) {
+            if (!dataObj) return [];
+            return Object.entries(dataObj).sort((a, b) => new Date(b[1].created_at || 0) - new Date(a[1].created_at || 0));
+        }
+
+        async function subirImagen(file, carpeta) {
+            if (!file) return null;
+            try {
+                const nombreUnico = `${carpeta}/${Date.now()}_${file.name}`;
+                const sRef = storageRef(storage, nombreUnico);
+                await uploadBytes(sRef, file);
+                return await getDownloadURL(sRef);
+            } catch (error) {
+                console.error("Error subiendo foto (Revise Reglas de Storage):", error);
+                return null;
+            }
+        }
+
+        // RADARES
+        onValue(ref(db, 'personas'), (snapshot) => {
+            const arr = ordenarPorFecha(snapshot.val());
+            const container = document.getElementById('adminPersonas');
+            document.getElementById('countPersonas').innerText = arr.length;
+            container.innerHTML = '';
+            arr.forEach(([id, p]) => {
+                const badge = p.estado === 'localizado' ? '<span class="text-emerald-400">LOCALIZADO</span>' : '<span class="text-red-400">DESAPARECIDO</span>';
+                container.insertAdjacentHTML('beforeend', `<div class="bg-slate-900 p-3 rounded-lg border border-slate-700 flex justify-between items-center mb-2"><div class="truncate"><p class="text-white text-sm font-bold truncate">${escapeHtml(p.nombre_completo)}</p><p class="text-xs text-slate-400 mt-1">${badge} | ${escapeHtml(p.ciudad_nombre)}</p></div><button onclick="window.borrarRegistro('personas', '${id}')" class="text-slate-600 hover:text-red-500 p-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button></div>`);
+            });
+        });
+
+        onValue(ref(db, 'acopios'), (snapshot) => {
+            const arr = ordenarPorFecha(snapshot.val());
+            const container = document.getElementById('adminAcopios');
+            document.getElementById('countAcopios').innerText = arr.length;
+            container.innerHTML = '';
+            arr.forEach(([id, a]) => {
+                const imgIcon = a.foto_url ? '📷 ' : '';
+                container.insertAdjacentHTML('beforeend', `<div class="bg-slate-900 p-3 rounded-lg border border-slate-700 flex justify-between items-center mb-2"><div class="truncate"><p class="text-emerald-400 text-sm font-bold truncate">${imgIcon}${escapeHtml(a.nombre)}</p><p class="text-xs text-slate-400 mt-1">📍 ${escapeHtml(a.ciudad_nombre)}</p></div><button onclick="window.borrarRegistro('acopios', '${id}')" class="text-slate-600 hover:text-red-500 p-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button></div>`);
+            });
+        });
+
+        onValue(ref(db, 'hospedajes'), (snapshot) => {
+            const arr = ordenarPorFecha(snapshot.val());
+            const container = document.getElementById('adminHospedajes');
+            document.getElementById('countHospedajes').innerText = arr.length;
+            container.innerHTML = '';
+            arr.forEach(([id, h]) => {
+                const imgIcon = h.foto_url ? '📷 ' : '';
+                container.insertAdjacentHTML('beforeend', `<div class="bg-slate-900 p-3 rounded-lg border border-slate-700 flex justify-between items-center mb-2"><div class="truncate"><p class="text-purple-400 text-sm font-bold truncate">${imgIcon}${escapeHtml(h.nombre)}</p><p class="text-xs text-slate-400 mt-1">Cap: ${escapeHtml(h.capacidad)} | ${escapeHtml(h.ciudad_nombre)}</p></div><button onclick="window.borrarRegistro('hospedajes', '${id}')" class="text-slate-600 hover:text-red-500 p-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></button></div>`);
+            });
+        });
+
+        // FORMULARIOS CON IMÁGENES
+        document.getElementById('formAcopio').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const txt = btn.innerText;
+            btn.innerText = "SUBIENDO FOTO Y DATOS..."; btn.disabled = true;
+
+            try {
+                const file = document.getElementById('ac_foto').files[0];
+                const fotoUrl = await subirImagen(file, 'acopios');
+
+                await set(push(ref(db, 'acopios')), {
+                    nombre: document.getElementById('ac_nombre').value.trim(),
+                    ciudad_nombre: document.getElementById('ac_ciudad').value.trim(),
+                    direccion: document.getElementById('ac_direccion').value.trim(),
+                    descripcion: document.getElementById('ac_desc').value.trim(),
+                    foto_url: fotoUrl,
+                    created_at: new Date().toISOString()
+                });
+                alert("¡Centro de Acopio inyectado a la red!");
+                e.target.reset();
+            } catch (err) { alert("Error de base de datos."); console.error(err); }
+            btn.innerText = txt; btn.disabled = false;
+        });
+
+        document.getElementById('formHospedaje').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const txt = btn.innerText;
+            btn.innerText = "SUBIENDO FOTO Y DATOS..."; btn.disabled = true;
+
+            try {
+                const file = document.getElementById('ho_foto').files[0];
+                const fotoUrl = await subirImagen(file, 'hospedajes');
+
+                await set(push(ref(db, 'hospedajes')), {
+                    nombre: document.getElementById('ho_nombre').value.trim(),
+                    ciudad_nombre: document.getElementById('ho_ciudad').value.trim(),
+                    direccion: document.getElementById('ho_direccion').value.trim(),
+                    capacidad: document.getElementById('ho_capacidad').value.trim(),
+                    contacto: document.getElementById('ho_contacto').value.trim(),
+                    descripcion: document.getElementById('ho_desc').value.trim(),
+                    foto_url: fotoUrl,
+                    created_at: new Date().toISOString()
+                });
+                alert("¡Hospedaje inyectado a la red!");
+                e.target.reset();
+            } catch (err) { alert("Error de base de datos."); console.error(err); }
+            btn.innerText = txt; btn.disabled = false;
+        });
+    </script>
+</body>
+
+</html>

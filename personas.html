@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html class="light" lang="es" style="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Reporte - COLOMBIA UNIDA</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#554500",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed": "#231b00",
+                        "tertiary-container": "#cca800",
+                        "error": "#ba1a1a",
+                        "surface": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-container": "#e12531",
+                        "on-secondary-fixed-variant": "#930015",
+                        "secondary-fixed-dim": "#ffb3ae",
+                        "on-background": "#191c1d",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdad7",
+                        "on-primary-container": "#88a7ff",
+                        "primary-fixed": "#dae1ff",
+                        "tertiary-fixed-dim": "#ecc300",
+                        "surface-tint": "#335ab4",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#12419b",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#b3c5ff",
+                        "outline-variant": "#c4c6d4",
+                        "inverse-on-surface": "#f0f1f2",
+                        "outline": "#747683",
+                        "surface-container": "#edeeef",
+                        "primary": "#002465",
+                        "background": "#f8f9fa",
+                        "on-error": "#ffffff",
+                        "primary-container": "#003893",
+                        "tertiary-fixed": "#ffe17b",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary": "#bb001e",
+                        "on-primary-fixed": "#001849",
+                        "surface-dim": "#d9dadb",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#715c00",
+                        "on-secondary-fixed": "#410004",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "on-surface": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2e3132",
+                        "on-tertiary-container": "#4d3e00",
+                        "on-surface-variant": "#434652"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "container-max": "1280px",
+                        "gutter": "20px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+
+        /* Custom scrollbar for desktop lists */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f8f9fa;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c4c6d4;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #747683;
+        }
+
+        body {
+            color: theme('colors.on-background');
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .main-container {
+            max-width: theme('spacing.container-max');
+            margin: 0 auto;
+            padding-top: 5rem;
+            padding-bottom: 6rem;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col pt-16 pb-20 md:pb-0 relative">
+
+    <div class="fixed inset-0 w-full h-full -z-10 bg-background/85 backdrop-blur-md pointer-events-none"></div>
+
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-primary text-on-primary border-b border-outline-variant shadow-md">
+        <div class="flex items-center gap-md">
+            <h1 class="font-headline-lg text-headline-lg font-black tracking-tighter text-on-primary">COLOMBIA UNIDA
+            </h1>
+        </div>
+        <div class="hidden md:flex gap-md font-label-md text-label-md"></div>
+        <div class="flex items-center gap-sm">
+            <button aria-label="Search"
+                class="p-2 hover:bg-primary-fixed-variant transition-colors rounded-full"></button>
+            <button aria-label="Emergency share"
+                class="p-2 hover:bg-primary-fixed-variant transition-colors rounded-full"></button>
+            <button aria-label="Call"
+                class="p-2 hover:bg-primary-fixed-variant transition-colors rounded-full"></button>
+            <button
+                class="bg-secondary text-on-secondary font-label-md text-label-md px-4 py-2 rounded font-bold hover:bg-secondary-container transition-colors ml-2 shadow-sm">SOS</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col">
+        <!-- Hero Section -->
+        <section
+            class="relative w-full h-[30vh] md:h-[40vh] min-h-[250px] flex items-center justify-center overflow-hidden bg-primary-container">
+            <div class="absolute inset-0 z-0">
+                <img alt="Colombia Unida Hands"
+                    class="w-full h-full object-cover object-center opacity-40 mix-blend-multiply"
+                    src="https://lh3.googleusercontent.com/aida/AP1WRLv2lcFQbJXZTYbO2Y_QDF2fO5_sch3Or0V0hh_OKuTFWqBg296JHL3LeDtHTV9wdyg4H9uOIkYlQUwuKmD-IZdomECvJla8kS4GtIK28ju4eXnPu2XOBIiYRF1WE6FYUpwKtWLPbrDm-tp8sS5PI_ViCnqugjrtsJxjKLiY7FZrcKzHXeWDvVJ9Xk1D-ELy-zwdY1VX0WB94i_vYCR4YJqy-0mbvWVYZvhL8QXqdNawkDVl2eICJ0Ql176k" />
+                <div class="absolute inset-0 bg-gradient-to-b from-primary/80 to-primary/95"></div>
+            </div>
+            <div class="relative z-10 container mx-auto px-gutter max-w-container-max flex flex-col items-start w-full">
+                <a class="inline-flex items-center gap-2 text-on-primary-container hover:text-on-primary transition-colors mb-lg font-label-md text-label-md bg-surface-tint/20 px-3 py-1.5 rounded-full border border-outline-variant/30 backdrop-blur-sm"
+                    href="index.html">
+                    <span class="material-symbols-outlined text-[18px]">arrow_back</span> Volver
+                </a>
+                <h2
+                    class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-primary mb-2 shadow-sm">
+                    MÓDULO DE BÚSQUEDA
+                </h2>
+                <p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-2xl">
+                    Sistema centralizado de reporte y localización de personas durante operaciones de respuesta a
+                    emergencias.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <section
+            class="container mx-auto px-gutter max-w-container-max py-lg md:py-xl flex-grow flex flex-col lg:flex-row gap-lg">
+
+            <!-- Form Column (MOTOR FIREBASE INYECTADO) -->
+            <div class="w-full lg:w-7/12 xl:w-2/3">
+                <div
+                    class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden h-full">
+                    <div class="bg-surface-container-low px-md py-4 border-b border-outline-variant">
+                        <h3 class="font-headline-md text-headline-md text-on-background flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">person_add</span> Ingresar Reporte
+                        </h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-1">Complete los datos con la
+                            mayor precisión posible para facilitar la búsqueda.</p>
+                    </div>
+
+                    <form id="formReporte" class="p-md md:p-lg flex flex-col gap-md">
+                        <!-- Personal Info Group -->
+                        <div class="space-y-md">
+                            <h4
+                                class="font-label-md text-label-md text-primary font-bold border-b border-outline-variant pb-1">
+                                Información Personal</h4>
+                            <div class="space-y-sm">
+                                <label class="block font-label-md text-label-md text-on-surface">Estado de la Persona
+                                    <span class="text-secondary">*</span></label>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                                    <label
+                                        class="relative flex items-center p-3 border border-outline-variant rounded-lg cursor-pointer hover:bg-error-container/20 transition-colors bg-surface-bright">
+                                        <input checked="" class="peer sr-only" name="estado" type="radio"
+                                            value="desaparecido" />
+                                        <div
+                                            class="w-5 h-5 border-2 border-outline rounded-full peer-checked:border-secondary peer-checked:border-[6px] mr-3 flex-shrink-0 transition-all">
+                                        </div>
+                                        <span
+                                            class="font-label-md text-label-md font-bold text-on-background flex items-center gap-2">
+                                            <span class="w-3 h-3 rounded-full bg-secondary"></span> DESAPARECIDO
+                                        </span>
+                                    </label>
+                                    <label
+                                        class="relative flex items-center p-3 border border-outline-variant rounded-lg cursor-pointer hover:bg-primary-fixed/20 transition-colors bg-surface-bright">
+                                        <input class="peer sr-only" name="estado" type="radio" value="localizado" />
+                                        <div
+                                            class="w-5 h-5 border-2 border-outline rounded-full peer-checked:border-primary peer-checked:border-[6px] mr-3 flex-shrink-0 transition-all">
+                                        </div>
+                                        <span
+                                            class="font-label-md text-label-md font-bold text-on-background flex items-center gap-2">
+                                            <span class="w-3 h-3 rounded-full bg-primary"></span> LOCALIZADO / A SALVO
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                                <div class="space-y-xs">
+                                    <label class="block font-label-md text-label-md text-on-surface"
+                                        for="nombres">Nombres <span class="text-secondary">*</span></label>
+                                    <input id="nombres"
+                                        class="w-full h-12 bg-surface-bright border border-outline-variant rounded focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none px-3 font-body-md text-body-md placeholder:text-outline"
+                                        placeholder="Ej. Juan Carlos" required="" type="text" />
+                                </div>
+                                <div class="space-y-xs">
+                                    <label class="block font-label-md text-label-md text-on-surface"
+                                        for="apellidos">Apellidos <span class="text-secondary">*</span></label>
+                                    <input id="apellidos"
+                                        class="w-full h-12 bg-surface-bright border border-outline-variant rounded focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none px-3 font-body-md text-body-md placeholder:text-outline"
+                                        placeholder="Ej. Pérez Gómez" required="" type="text" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location Group -->
+                        <div class="space-y-md mt-4">
+                            <h4
+                                class="font-label-md text-label-md text-primary font-bold border-b border-outline-variant pb-1">
+                                Ubicación</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                                <div class="space-y-xs relative">
+                                    <label class="block font-label-md text-label-md text-on-surface" for="ciudad">Ciudad
+                                        <span class="text-secondary">*</span></label>
+                                    <div class="relative">
+                                        <select id="ciudad"
+                                            class="w-full h-12 bg-surface-bright border border-outline-variant rounded focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none px-3 appearance-none font-body-md text-body-md"
+                                            required="">
+                                            <option disabled="" selected="" value="">Seleccione una ciudad</option>
+                                            <option value="Bogotá">Bogotá, D.C.</option>
+                                            <option value="Medellín">Medellín</option>
+                                            <option value="Cali">Cali</option>
+                                            <option value="Barranquilla">Barranquilla</option>
+                                            <option value="Pasto">Pasto</option>
+                                            <option value="otra" class="font-bold text-primary">Otra (Escribir manual)
+                                            </option>
+                                        </select>
+                                        <span
+                                            class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none">expand_more</span>
+                                    </div>
+                                    <input type="text" id="ciudad_otra"
+                                        class="w-full h-12 bg-surface-bright border border-outline-variant rounded focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none px-3 font-body-md text-body-md mt-2 hidden"
+                                        placeholder="Escriba la ciudad...">
+                                </div>
+                                <div class="space-y-xs">
+                                    <label class="block font-label-md text-label-md text-on-surface"
+                                        for="ubicacion">Ubicación / Barrio <span class="text-secondary">*</span></label>
+                                    <input id="ubicacion"
+                                        class="w-full h-12 bg-surface-bright border border-outline-variant rounded focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none px-3 font-body-md text-body-md placeholder:text-outline"
+                                        placeholder="Última ubicación conocida" required="" type="text" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Physical Features & Contact -->
+                        <div class="space-y-md mt-4">
+                            <h4
+                                class="font-label-md text-label-md text-primary font-bold border-b border-outline-variant pb-1">
+                                Detalles Adicionales</h4>
+                            <div class="space-y-xs">
+                                <label class="block font-label-md text-label-md text-on-surface"
+                                    for="descripcion">Características físicas o ropa (Opcional)</label>
+                                <textarea id="descripcion"
+                                    class="w-full bg-surface-bright border border-outline-variant rounded focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none px-3 py-2 font-body-md text-body-md placeholder:text-outline resize-y"
+                                    placeholder="Describa vestimenta, cicatrices, tatuajes u otras señas particulares..."
+                                    rows="3"></textarea>
+                            </div>
+                            <div class="space-y-xs">
+                                <label class="block font-label-md text-label-md text-on-surface" for="contacto">Su
+                                    Teléfono de Contacto <span class="text-secondary">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute left-3 top-3 text-outline font-label-md">+57</span>
+                                    <input id="contacto"
+                                        class="w-full h-12 bg-surface-bright border border-outline-variant rounded focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none pl-12 pr-3 font-body-md text-body-md placeholder:text-outline"
+                                        placeholder="300 000 0000" required="" type="tel" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Action -->
+                        <div class="mt-6 pt-4 border-t border-outline-variant flex justify-end">
+                            <button id="btnSubmit" type="submit"
+                                class="w-full md:w-auto min-h-[48px] bg-primary text-on-primary font-label-md text-label-md font-bold px-8 py-3 rounded shadow-md hover:bg-primary-container transition-colors flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-[20px]">cloud_upload</span> REGISTRAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- List Column -->
+            <div class="w-full lg:w-5/12 xl:w-1/3">
+                <div
+                    class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm flex flex-col h-full max-h-[800px]">
+                    <div
+                        class="bg-surface-container-low px-md py-4 border-b border-outline-variant flex justify-between items-center">
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-on-background flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">database</span> Base de Datos
+                            </h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant mt-1">Haga clic en una persona
+                                para ver detalles.</p>
+                        </div>
+                        <div id="contadorRegistros"
+                            class="bg-primary-fixed text-on-primary-fixed-variant px-2 py-1 rounded font-label-sm text-label-sm">
+                            0 Reg.
+                        </div>
+                    </div>
+
+                    <!-- Search Filter inside list -->
+                    <div class="p-3 border-b border-outline-variant bg-surface-bright">
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[20px]">search</span>
+                            <input id="inputBuscarPersona"
+                                class="w-full h-10 bg-surface border border-outline-variant rounded focus:border-primary focus:outline-none pl-10 pr-3 font-body-md text-body-md text-sm placeholder:text-outline"
+                                placeholder="Buscar por nombre o ciudad..." type="text" />
+                        </div>
+                    </div>
+
+                    <!-- List Items -->
+                    <div id="listaRegistros" class="flex-grow overflow-y-auto custom-scrollbar">
+                        <!-- Carga dinámica Firebase -->
+                        <div class="flex flex-col items-center justify-center h-full opacity-50 py-10">
+                            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mb-3"></div>
+                            <p class="text-xs text-on-surface-variant font-bold uppercase tracking-widest">Sincronizando
+                                red...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL DE DETALLES INTEGRADO AL DISEÑO VISUAL -->
+    <div id="modalDetalles"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-surface border border-outline-variant w-full max-w-lg p-6 rounded-2xl shadow-xl relative transform scale-95 transition-transform duration-300"
+            id="modalContent">
+            <button id="btnCerrarModal"
+                class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface bg-surface-container-high hover:bg-surface-variant p-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface border-t border-outline-variant shadow-lg rounded-t-xl md:hidden">
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-lg"
+            href="index.html">
+            <span class="material-symbols-outlined mb-1">dashboard</span>
+            <span class="font-label-sm text-label-sm">Dashboard</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-lg"
+            href="acopio.html">
+            <span class="material-symbols-outlined mb-1">inventory_2</span>
+            <span class="font-label-sm text-label-sm">Resources</span>
+        </a>
+        <a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 translate-y-[-2px] duration-200"
+            href="#">
+            <span class="material-symbols-outlined mb-1">cloud_upload</span>
+            <span class="font-label-sm text-label-sm">Reports</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer
+        class="w-full py-lg px-gutter flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-highest text-on-background border-t border-outline mb-20 md:mb-0">
+        <div class="flex items-center gap-2">
+            <span class="font-headline-sm text-headline-sm font-bold text-secondary">COLOMBIA UNIDA</span>
+            <span class="font-body-md text-body-md text-on-surface-variant ml-2 border-l border-outline-variant pl-2">©
+                2024 - Plataforma de Respuesta Humanitaria</span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-x-md gap-y-2 font-label-sm text-label-sm">
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Cruz Roja Colombiana</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Defensa Civil</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Gestión del Riesgo
+                UNGRD</a>
+            <a class="text-secondary font-bold underline hover:text-primary transition-colors flex items-center gap-1"
+                href="#"><span class="material-symbols-outlined text-[14px]">call</span>Línea 123</a>
+        </div>
+    </footer>
+
+    <!-- STARK-V25: MOTOR FIREBASE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+        // TU CONFIGURACIÓN EXACTA DE FIREBASE
+        const firebaseConfig = {
+            apiKey: "AIzaSyD-31_2Z9fazqSnMfk7QL_3sQQ1Y0tuzec",
+            authDomain: "colombiaunida-228c9.firebaseapp.com",
+            databaseURL: "https://colombiaunida-228c9-default-rtdb.firebaseio.com",
+            projectId: "colombiaunida-228c9",
+            storageBucket: "colombiaunida-228c9.firebasestorage.app",
+            messagingSenderId: "561377523862",
+            appId: "1:561377523862:web:98f495acfa97d81c122ab7"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const personasRef = ref(db, 'personas');
+
+        // ELEMENTOS UI
+        const selectCiudad = document.getElementById('ciudad');
+        const inputOtra = document.getElementById('ciudad_otra');
+        const inputBuscarPersona = document.getElementById('inputBuscarPersona');
+        const formReporte = document.getElementById('formReporte');
+        const modal = document.getElementById('modalDetalles');
+
+        // LÓGICA DE CIUDAD MANUAL
+        selectCiudad.addEventListener('change', () => {
+            if (selectCiudad.value === 'otra') {
+                inputOtra.classList.remove('hidden');
+                inputOtra.setAttribute('required', 'true');
+            } else {
+                inputOtra.classList.add('hidden');
+                inputOtra.removeAttribute('required');
+                inputOtra.value = '';
+            }
+        });
+
+        // UTILIDADES
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        function tiempoRelativo(fechaISO) {
+            if (!fechaISO) return 'Reciente';
+            const diffMin = Math.floor((Date.now() - new Date(fechaISO).getTime()) / 60000);
+            if (diffMin < 1) return 'Justo ahora';
+            if (diffMin < 60) return `Hace ${diffMin} min`;
+            const horas = Math.floor(diffMin / 60);
+            if (horas < 24) return `Hace ${horas} h`;
+            return `Hace ${Math.floor(horas / 24)} d`;
+        }
+
+        // FUNCIONES DEL MODAL
+        window.mostrarDetalles = function (personaB64) {
+            try {
+                const p = JSON.parse(decodeURIComponent(escape(atob(personaB64))));
+                const modalBody = document.getElementById('modalBody');
+
+                const esLocalizado = p.estado === 'localizado';
+                const colorBg = esLocalizado ? 'bg-primary-fixed' : 'bg-error-container';
+                const colorText = esLocalizado ? 'text-on-primary-fixed-variant' : 'text-on-error-container';
+                const icon = esLocalizado ? 'verified_user' : 'person_alert';
+                const etiqueta = esLocalizado ? 'LOCALIZADO / A SALVO' : 'DESAPARECIDO';
+
+                modalBody.innerHTML = `
+                    <div class="flex items-center gap-4 mb-6 pr-8">
+                        <div class="${colorBg} ${colorText} p-3 rounded-xl flex-shrink-0">
+                            <span class="material-symbols-outlined text-[32px]">${icon}</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-on-background leading-tight">${escapeHtml(p.nombre_completo)}</h3>
+                            <span class="inline-block mt-1 text-[10px] font-extrabold px-2 py-1 rounded-md ${colorBg} ${colorText} border tracking-wider">${etiqueta}</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4 bg-surface-container-low p-5 rounded-xl border border-outline-variant">
+                        <div>
+                            <strong class="text-on-surface-variant uppercase tracking-widest text-[10px] block mb-1">📍 Ubicación:</strong>
+                            <p class="text-sm text-on-surface font-semibold">${escapeHtml(p.ciudad_nombre)} — ${escapeHtml(p.ubicacion)}</p>
+                        </div>
+                        <div>
+                            <strong class="text-on-surface-variant uppercase tracking-widest text-[10px] block mb-1">📝 Descripción:</strong>
+                            <p class="text-sm text-on-surface">${escapeHtml(p.descripcion || 'Sin información adicional')}</p>
+                        </div>
+                        <div>
+                            <strong class="text-on-surface-variant uppercase tracking-widest text-[10px] block mb-1">📞 Contacto:</strong>
+                            <p class="text-sm text-secondary font-semibold">${escapeHtml(p.contacto || 'No especificado')}</p>
+                        </div>
+                        <div>
+                            <strong class="text-on-surface-variant uppercase tracking-widest text-[10px] block mb-1">⏱️ Fecha del Reporte:</strong>
+                            <p class="text-sm text-primary font-semibold">${p.created_at ? new Date(p.created_at).toLocaleString('es-CO') : 'Reciente'}</p>
+                        </div>
+                    </div>
+                `;
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    document.getElementById('modalContent').classList.remove('scale-95');
+                }, 10);
+            } catch (e) { console.error("Error modal:", e); }
+        };
+
+        document.getElementById('btnCerrarModal').addEventListener('click', () => {
+            modal.classList.add('opacity-0');
+            document.getElementById('modalContent').classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        });
+
+        // LECTURA EN TIEMPO REAL DESDE FIREBASE
+        let registrosCache = [];
+
+        onValue(personasRef, (snapshot) => {
+            const data = snapshot.val();
+            registrosCache = [];
+            if (data) {
+                Object.keys(data).forEach(key => {
+                    registrosCache.push({ id: key, ...data[key] });
+                });
+                registrosCache.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+            }
+            aplicarFiltroBusqueda();
+        });
+
+        function renderizarRegistros(lista) {
+            const contenedor = document.getElementById('listaRegistros');
+            document.getElementById('contadorRegistros').innerText = `${lista.length} Reg.`;
+
+            if (lista.length === 0) {
+                contenedor.innerHTML = '<p class="text-on-surface-variant text-sm text-center py-6">No hay registros en Firebase.</p>';
+                return;
+            }
+
+            let htmlList = '<ul class="divide-y divide-outline-variant">';
+
+            lista.forEach(p => {
+                const esLocalizado = p.estado === 'localizado';
+                const badgeClass = esLocalizado ? 'bg-primary-fixed text-on-primary-fixed-variant border-primary/20' : 'bg-error-container text-on-error-container border-secondary/20';
+                const dotClass = esLocalizado ? 'bg-primary' : 'bg-secondary';
+                const dataB64 = btoa(unescape(encodeURIComponent(JSON.stringify(p))));
+
+                htmlList += `
+                    <li onclick="window.mostrarDetalles('${dataB64}')" class="p-md hover:bg-surface-container-low transition-colors cursor-pointer group border-b border-outline-variant/30">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-headline-md text-body-lg font-bold text-on-background group-hover:text-primary transition-colors">${escapeHtml(p.nombre_completo)}</h4>
+                            <span class="inline-flex items-center gap-1 ${badgeClass} px-2 py-0.5 rounded-full font-label-sm text-label-sm border">
+                                <span class="w-1.5 h-1.5 rounded-full ${dotClass}"></span>
+                                ${esLocalizado ? 'LOCALIZADO' : 'DESAPARECIDO'}
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-col gap-1">
+                                <span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[16px]">location_on</span>
+                                    ${escapeHtml(p.ubicacion)}, ${escapeHtml(p.ciudad_nombre)}
+                                </span>
+                            </div>
+                            <span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]">schedule</span>
+                                ${tiempoRelativo(p.created_at)}
+                            </span>
+                        </div>
+                    </li>
+                `;
+            });
+            htmlList += '</ul>';
+            contenedor.innerHTML = htmlList;
+        }
+
+        function aplicarFiltroBusqueda() {
+            const texto = inputBuscarPersona.value.toLowerCase().trim();
+            const filtrados = !texto ? registrosCache : registrosCache.filter(p =>
+                (p.nombre_completo || '').toLowerCase().includes(texto) ||
+                (p.ciudad_nombre || '').toLowerCase().includes(texto)
+            );
+            renderizarRegistros(filtrados);
+        }
+
+        inputBuscarPersona.addEventListener('input', aplicarFiltroBusqueda);
+
+        // ESCRITURA EN FIREBASE
+        formReporte.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('btnSubmit');
+            const textoOriginal = btn.innerHTML; // Conserva el ícono SVG
+
+            const nombres = document.getElementById('nombres').value.trim();
+            const apellidos = document.getElementById('apellidos').value.trim();
+            const ubicacion = document.getElementById('ubicacion').value.trim();
+            const descripcion = document.getElementById('descripcion').value.trim();
+            const contacto = document.getElementById('contacto').value.trim();
+            const estado = document.querySelector('input[name="estado"]:checked').value;
+
+            const ciudadIdRaw = document.getElementById('ciudad').value;
+            const ciudadNombre = ciudadIdRaw === 'otra' ? inputOtra.value.trim() : selectCiudad.options[selectCiudad.selectedIndex].text;
+
+            if (!ciudadNombre) {
+                alert('Debe especificar una ciudad.');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerText = 'GUARDANDO...';
+
+            try {
+                const nuevoRegistroRef = push(personasRef);
+
+                await set(nuevoRegistroRef, {
+                    nombres: nombres,
+                    apellidos: apellidos,
+                    nombre_completo: `${nombres} ${apellidos}`,
+                    estado: estado,
+                    ciudad_nombre: ciudadNombre,
+                    ubicacion: ubicacion,
+                    descripcion: descripcion || "",
+                    contacto: contacto,
+                    created_at: new Date().toISOString()
+                });
+
+                btn.innerText = "¡REGISTRO EXITOSO!";
+                btn.classList.replace('bg-primary', 'bg-secondary-container');
+                btn.classList.replace('text-on-primary', 'text-on-secondary-container');
+
+                setTimeout(() => {
+                    formReporte.reset();
+                    inputOtra.classList.add('hidden');
+                    btn.innerHTML = textoOriginal;
+                    btn.classList.replace('bg-secondary-container', 'bg-primary');
+                    btn.classList.replace('text-on-secondary-container', 'text-on-primary');
+                    btn.disabled = false;
+                }, 2500);
+
+            } catch (error) {
+                console.error('[STARK-V25] Error de Firebase:', error);
+                alert(`❌ ERROR DE FIREBASE:\n\nNo se pudo escribir en la base de datos.`);
+                btn.disabled = false;
+                btn.innerHTML = textoOriginal;
+            }
+        });
+    </script>
+</body>
+
+</html>

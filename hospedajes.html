@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Refugios y Hospedajes - COLOMBIA UNIDA</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+        rel="stylesheet">
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#410004",
+                        "primary-container": "#003893",
+                        "primary-fixed": "#dae1ff",
+                        "inverse-primary": "#b3c5ff",
+                        "surface": "#f8f9fa",
+                        "secondary-fixed-dim": "#ffb3ae",
+                        "on-surface": "#191c1d",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffe17b",
+                        "on-tertiary-container": "#4d3e00",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#e12531",
+                        "on-primary-fixed": "#001849",
+                        "on-secondary-container": "#fffbff",
+                        "surface-dim": "#d9dadb",
+                        "outline": "#747683",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary": "#715c00",
+                        "on-secondary-fixed-variant": "#930015",
+                        "primary": "#002465",
+                        "on-tertiary-fixed-variant": "#554500",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c4c6d4",
+                        "surface-container": "#edeeef",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#231b00",
+                        "tertiary-container": "#cca800",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#88a7ff",
+                        "surface-bright": "#f8f9fa",
+                        "surface-tint": "#335ab4",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e7e8e9",
+                        "on-background": "#191c1d",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary-fixed": "#ffdad7",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#12419b",
+                        "secondary": "#bb001e",
+                        "inverse-surface": "#2e3132",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface-variant": "#434652",
+                        "tertiary-fixed-dim": "#ecc300"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "container-max": "1280px",
+                        "gutter": "20px",
+                        "sm": "8px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl-mobile": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "label-md": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background min-h-screen font-body-lg flex flex-col pt-16">
+
+    <!-- TopAppBar -->
+    <header
+        class="bg-primary fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 border-b border-outline-variant shadow-sm transition-all duration-300">
+        <div class="flex items-center gap-sm">
+            <span
+                class="material-symbols-outlined text-on-primary cursor-pointer hover:text-primary-fixed-dim transition-colors"
+                data-weight="fill">menu</span>
+            <span class="font-headline-lg text-headline-lg font-black tracking-tighter text-on-primary ml-2">COLOMBIA
+                UNIDA</span>
+        </div>
+        <div class="flex items-center gap-md">
+            <button
+                class="bg-secondary text-on-secondary font-label-md text-label-md px-4 py-2 rounded-full font-bold hover:bg-secondary-container transition-colors shadow-sm">SOS</button>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col">
+        <!-- Hero Header -->
+        <section class="relative w-full h-[300px] md:h-[400px] flex items-end pb-lg px-gutter pt-24"
+            style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLv2lcFQbJXZTYbO2Y_QDF2fO5_sch3Or0V0hh_OKuTFWqBg296JHL3LeDtHTV9wdyg4H9uOIkYlQUwuKmD-IZdomECvJla8kS4GtIK28ju4eXnPu2XOBIiYRF1WE6FYUpwKtWLPbrDm-tp8sS5PI_ViCnqugjrtsJxjKLiY7FZrcKzHXeWDvVJ9Xk1D-ELy-zwdY1VX0WB94i_vYCR4YJqy-0mbvWVYZvhL8QXqdNawkDVl2eICJ0Ql176k'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 w-full max-w-container-max mx-auto flex flex-col gap-sm">
+                <a href="index.html"
+                    class="flex items-center text-on-primary opacity-80 hover:opacity-100 transition-opacity font-label-sm text-label-sm mb-sm w-fit">
+                    <span class="material-symbols-outlined mr-xs text-sm" data-icon="arrow_back">arrow_back</span>
+                    Volver&nbsp;
+                </a>
+                <div class="flex flex-col gap-xs">
+                    <span
+                        class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-sm py-xs rounded-full w-fit uppercase tracking-widest font-bold">
+                        RED DE ALOJAMIENTO
+                    </span>
+                    <h1
+                        class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-primary m-0">
+                        REFUGIOS Y HOSPEDAJES</h1>
+                    <p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl">Empresas, colegios y
+                        familias que ofrecen un techo seguro para los damnificados.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <div class="w-full bg-surface border-b border-outline-variant shadow-sm sticky top-16 z-40">
+            <div
+                class="max-w-container-max mx-auto px-gutter py-md flex flex-col md:flex-row items-center gap-md justify-between">
+                <div class="flex w-full md:w-auto gap-sm flex-col md:flex-row flex-grow">
+                    <div class="relative w-full max-w-md">
+                        <select id="filtroCiudad"
+                            class="w-full pl-xl pr-sm py-sm border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all appearance-none h-[48px] cursor-pointer">
+                            <option value="todas">Todas las ciudades</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none"
+                            data-icon="location_on">location_on</span>
+                        <span
+                            class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none"
+                            data-icon="expand_more">expand_more</span>
+                    </div>
+                </div>
+                <div
+                    class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant w-full md:w-auto justify-end whitespace-nowrap bg-primary-fixed/20 px-4 py-2 rounded-lg border border-primary-fixed">
+                    <span class="material-symbols-outlined text-sm text-primary" data-icon="home_work">home_work</span>
+                    Lugares Disponibles: <strong id="contadorHospedajes" class="text-primary ml-1">0</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid -->
+        <section class="max-w-container-max mx-auto w-full px-gutter py-xl flex-grow">
+            <div id="contenedorHospedajes" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg mb-xl">
+                <div class="col-span-full py-10 flex flex-col items-center">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mb-3"></div>
+                    <p class="text-xs text-on-surface-variant font-bold uppercase tracking-widest">Sincronizando
+                        puntos...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL DE CONTACTO -->
+    <div id="modalContacto"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-surface border border-outline-variant w-full max-w-sm p-6 rounded-2xl shadow-xl relative transform scale-95 transition-transform duration-300"
+            id="modalContent">
+            <button id="btnCerrarModal"
+                class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface bg-surface-container-high hover:bg-surface-variant p-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div id="modalBody" class="text-center"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+        class="w-full py-lg px-gutter flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-highest border-t border-outline mt-auto">
+        <div class="flex items-center gap-2">
+            <span class="font-headline-sm text-headline-sm font-bold text-secondary">COLOMBIA UNIDA</span>
+        </div>
+        <p class="font-body-md text-body-md text-on-background text-center md:text-left">
+            © 2024 COLOMBIA UNIDA - Plataforma de Respuesta Humanitaria
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Cruz Roja Colombiana</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Defensa Civil</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Gestión del Riesgo UNGRD</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Línea 123</a>
+        </div>
+    </footer>
+
+    <!-- STARK-V25: MOTOR FIREBASE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD-31_2Z9fazqSnMfk7QL_3sQQ1Y0tuzec",
+            authDomain: "colombiaunida-228c9.firebaseapp.com",
+            databaseURL: "https://colombiaunida-228c9-default-rtdb.firebaseio.com",
+            projectId: "colombiaunida-228c9",
+            storageBucket: "colombiaunida-228c9.firebasestorage.app",
+            messagingSenderId: "561377523862",
+            appId: "1:561377523862:web:98f495acfa97d81c122ab7"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        let registrosCache = [];
+        const uiContenedor = document.getElementById('contenedorHospedajes');
+        const uiContador = document.getElementById('contadorHospedajes');
+        const selectCiudad = document.getElementById('filtroCiudad');
+        const modal = document.getElementById('modalContacto');
+
+        function escapeHtml(str) { return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+
+        function normalizarCiudad(c) {
+            if (!c) return '';
+            const str = c.trim();
+            return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+        }
+
+        window.abrirModalContacto = function (contacto, nombreRefugio) {
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="bg-primary/10 text-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="material-symbols-outlined text-[32px]">phone_in_talk</span>
+                </div>
+                <h3 class="font-headline-md text-on-surface mb-2">Contacto Directo</h3>
+                <p class="font-body-md text-on-surface-variant mb-6">${escapeHtml(nombreRefugio)}</p>
+                <div class="bg-surface-container-low border border-outline-variant p-4 rounded-xl mb-4">
+                    <span class="block text-2xl font-black text-primary tracking-widest">${escapeHtml(contacto)}</span>
+                </div>
+                <a href="tel:${escapeHtml(contacto)}" class="w-full inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md py-3 rounded-lg hover:bg-primary-container transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">call</span> Llamar Ahora
+                </a>
+            `;
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                document.getElementById('modalContent').classList.remove('scale-95');
+            }, 10);
+        };
+
+        document.getElementById('btnCerrarModal').addEventListener('click', () => {
+            modal.classList.add('opacity-0');
+            document.getElementById('modalContent').classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        });
+
+        function renderizarResultados(datos) {
+            uiContenedor.innerHTML = '';
+            uiContador.innerText = datos.length;
+
+            if (datos.length === 0) {
+                uiContenedor.innerHTML = `
+                    <div class="col-span-full bg-surface border border-outline-variant p-10 text-center rounded-2xl">
+                        <span class="material-symbols-outlined text-[48px] text-outline mb-4">night_shelter</span>
+                        <h3 class="text-xl font-bold text-on-surface-variant">No hay hospedajes registrados</h3>
+                        <p class="text-on-surface-variant mt-2 text-sm">Aún no se han registrado lugares con estos criterios.</p>
+                    </div>`;
+                return;
+            }
+
+            datos.forEach(p => {
+                const isFamily = p.nombre.toLowerCase().includes('casa') || p.nombre.toLowerCase().includes('familia');
+                const imageSrc = isFamily
+                    ? "https://lh3.googleusercontent.com/aida/AP1WRLtzjhZ07Qp6MMxeHH_pZD8hKz2Z9L9xOczIUxQ26nN4xVLxja8zUmB84F6vs5gND223v9Ds9hAgvZzC_Eh9-oRy-kqC4lVGM_p-EIpZNGBFi5gGnrXL3wDXR4TsoilqcASMeIn4_rXwNFgoqmXZzsJQIlxZTAyG198WrlNh5mJtTGqZZrzkud3E9HPaviMUl7r-dkN-le4p5ZWZPuSyZfwzV5Rx6_5fPZtBA7MmgV2Q31YyR3KnHGoqmNNY"
+                    : "https://lh3.googleusercontent.com/aida/AP1WRLtzjhZ07Qp6MMxeHH_pZD8hKz2Z9L9xOczIUxQ26nN4xVLxja8zUmB84F6vs5gND223v9Ds9hAgvZzC_Eh9-oRy-kqC4lVGM_p-EIpZNGBFi5gGnrXL3wDXR4TsoilqcASMeIn4_rXwNFgoqmXZzsJQIlxZTAyG198WrlNh5mJtTGqZZrzkud3E9HPaviMUl7r-dkN-le4p5ZWZPuSyZfwzV5Rx6_5fPZtBA7MmgV2Q31YyR3KnHGoqmNNY"; // You can change one URL if you want a different generic image for institutions
+
+                const cardHTML = `
+                    <div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div class="h-48 relative">
+                            <img class="w-full h-full object-cover" src="${imageSrc}" alt="Hospedaje">
+                            <div class="absolute top-sm right-sm bg-surface/90 backdrop-blur-sm px-2 py-1 rounded border border-outline-variant flex items-center gap-1">
+                                <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+                                <span class="font-label-sm text-label-sm text-on-surface">Disponible</span>
+                            </div>
+                        </div>
+                        <div class="p-md flex-1 flex flex-col">
+                            <div class="mb-sm">
+                                <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">${escapeHtml(p.nombre)}</h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[18px]">pin_drop</span> ${escapeHtml(p.direccion)}, ${escapeHtml(normalizarCiudad(p.ciudad_nombre))}
+                                </p>
+                            </div>
+                            <div class="bg-surface-container-low p-sm rounded-lg mb-md border border-outline-variant/50">
+                                <p class="font-label-md text-label-md text-primary flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-[18px]">group</span> Espacio para ${escapeHtml(p.capacidad)} personas
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-md">
+                                <span class="inline-flex items-center gap-1 bg-surface-container-high px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant border border-outline-variant/30">
+                                    <span class="material-symbols-outlined text-[14px]">info</span> ${escapeHtml(p.descripcion || 'Sin información adicional')}
+                                </span>
+                            </div>
+                            <div class="mt-auto grid grid-cols-2 gap-sm">
+                                <button class="bg-primary text-on-primary font-label-md text-label-md py-2 rounded-lg hover:bg-on-primary-fixed-variant transition-colors flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-[18px]">map</span> Ver ubicación
+                                </button>
+                                <button onclick="window.abrirModalContacto('${escapeHtml(p.contacto)}', '${escapeHtml(p.nombre)}')" class="bg-surface-container text-primary font-label-md text-label-md py-2 rounded-lg hover:bg-surface-container-high transition-colors border border-outline-variant flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-[18px]">phone</span> Contactar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                uiContenedor.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        function aplicarFiltroBusqueda() {
+            const ciudad = selectCiudad.value;
+            const filtrados = registrosCache.filter(p => (ciudad === 'todas') || (normalizarCiudad(p.ciudad_nombre) === ciudad));
+            renderizarResultados(filtrados);
+        }
+
+        selectCiudad.addEventListener('change', aplicarFiltroBusqueda);
+
+        // LEER DATA DE FIREBASE Y EXTRAER CIUDADES DINÁMICAS
+        onValue(ref(db, 'hospedajes'), (snapshot) => {
+            const data = snapshot.val();
+            registrosCache = [];
+            const ciudadesDinamicas = new Set();
+
+            if (data) {
+                Object.keys(data).forEach(key => {
+                    const item = data[key];
+                    registrosCache.push({ id: key, ...item });
+                    if (item.ciudad_nombre) {
+                        ciudadesDinamicas.add(normalizarCiudad(item.ciudad_nombre));
+                    }
+                });
+            }
+
+            // Actualizar Select
+            const selectValorAnterior = selectCiudad.value;
+            selectCiudad.innerHTML = '<option value="todas">Todas las ciudades</option>';
+
+            Array.from(ciudadesDinamicas).sort().forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c;
+                opt.textContent = c;
+                selectCiudad.appendChild(opt);
+            });
+
+            if (Array.from(ciudadesDinamicas).includes(selectValorAnterior)) {
+                selectCiudad.value = selectValorAnterior;
+            }
+
+            aplicarFiltroBusqueda();
+        });
+    </script>
+</body>
+
+</html>

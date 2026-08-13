@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="light" lang="es" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Búsqueda de Localizados - COLOMBIA UNIDA</title>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#335ab4",
+                        "on-tertiary-fixed-variant": "#554500",
+                        "on-surface-variant": "#434652",
+                        "secondary-container": "#e12531",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed": "#ffdad7",
+                        "on-primary-fixed-variant": "#12419b",
+                        "on-tertiary-container": "#4d3e00",
+                        "outline": "#747683",
+                        "outline-variant": "#c4c6d4",
+                        "tertiary": "#715c00",
+                        "inverse-primary": "#b3c5ff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "tertiary-container": "#cca800",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffe17b",
+                        "on-primary-container": "#88a7ff",
+                        "primary-fixed": "#dae1ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "on-secondary-fixed": "#410004",
+                        "on-background": "#191c1d",
+                        "on-surface": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed": "#231b00",
+                        "primary": "#002465",
+                        "primary-container": "#003893",
+                        "on-primary-fixed": "#001849",
+                        "secondary-fixed-dim": "#ffb3ae",
+                        "surface-container-low": "#f3f4f5",
+                        "surface": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary-fixed-variant": "#930015",
+                        "background": "#f8f9fa",
+                        "secondary": "#bb001e",
+                        "surface-container": "#edeeef",
+                        "on-secondary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ecc300",
+                        "surface-container-highest": "#e1e3e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "xl": "40px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "container-max": "1280px",
+                        "base": "4px",
+                        "xs": "4px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-xl-mobile": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+
+    <!-- TopAppBar -->
+    <header
+        class="flex justify-between items-center px-gutter w-full h-16 sticky top-0 z-50 bg-surface border-b border-outline-variant flat no shadows">
+        <div class="flex items-center gap-sm">
+            <span class="font-headline-md text-headline-md font-extrabold text-primary">COLOMBIA UNIDA</span>
+        </div>
+        <div>
+            <button
+                class="bg-secondary-container text-on-secondary-container px-md py-sm rounded font-label-md hover:opacity-80 transition-opacity flex items-center gap-xs">
+                <span class="material-symbols-outlined" style="font-size: 18px;">emergency</span>
+                SOS
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col">
+        <!-- Hero Section -->
+        <section
+            class="relative w-full py-xl px-gutter flex flex-col items-center justify-center text-center overflow-hidden min-h-[300px]">
+            <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLv2lcFQbJXZTYbO2Y_QDF2fO5_sch3Or0V0hh_OKuTFWqBg296JHL3LeDtHTV9wdyg4H9uOIkYlQUwuKmD-IZdomECvJla8kS4GtIK28ju4eXnPu2XOBIiYRF1WE6FYUpwKtWLPbrDm-tp8sS5PI_ViCnqugjrtsJxjKLiY7FZrcKzHXeWDvVJ9Xk1D-ELy-zwdY1VX0WB94i_vYCR4YJqy-0mbvWVYZvhL8QXqdNawkDVl2eICJ0Ql176k');">
+            </div>
+            <div class="absolute inset-0 bg-black/70"></div>
+            <div class="relative z-10 max-w-container-max mx-auto flex flex-col items-center gap-md">
+                <h1 class="text-on-primary font-headline-xl">BÚSQUEDA DE LOCALIZADOS</h1>
+                <p class="text-on-primary/90 font-body-lg max-w-2xl">Haga clic sobre cualquier tarjeta para ver los
+                    detalles y ubicación exacta de la persona.</p>
+            </div>
+        </section>
+
+        <!-- Back Navigation -->
+        <div class="max-w-container-max mx-auto w-full px-gutter py-md">
+            <a href="index.html"
+                class="inline-flex items-center gap-xs text-primary font-label-md hover:bg-surface-container py-2 pr-4 rounded transition-colors w-fit">
+                <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                Volver
+            </a>
+        </div>
+
+        <!-- Search Controls -->
+        <section class="max-w-container-max mx-auto w-full px-gutter pb-lg">
+            <div
+                class="bg-surface rounded-xl border border-outline-variant p-md flex flex-col md:flex-row gap-md shadow-sm">
+                <div class="flex-grow relative flex items-center">
+                    <span class="material-symbols-outlined absolute left-md text-outline">search</span>
+                    <input id="buscadorNombre"
+                        class="w-full pl-xl pr-md py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        placeholder="Nombre o Apellido" type="text">
+                </div>
+                <div class="md:w-64 relative flex items-center">
+                    <span class="material-symbols-outlined absolute left-md text-outline">location_on</span>
+                    <select id="filtroCiudad"
+                        class="w-full pl-xl pr-md py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none appearance-none transition-all cursor-pointer">
+                        <option value="todas">Todas las ciudades</option>
+                    </select>
+                    <span
+                        class="material-symbols-outlined absolute right-md text-outline pointer-events-none">arrow_drop_down</span>
+                </div>
+                <button id="btnBuscar"
+                    class="bg-primary-container text-on-primary-container px-xl py-3 rounded-lg font-label-md flex items-center justify-center gap-xs hover:opacity-90 transition-opacity">
+                    Buscar
+                </button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="max-w-container-max mx-auto w-full px-gutter flex-grow pb-xl flex flex-col">
+            <div class="flex justify-between items-center mb-md border-b border-outline-variant pb-xs">
+                <span class="font-label-md text-on-surface-variant flex items-center gap-xs">
+                    <span class="material-symbols-outlined text-[16px]">list</span>
+                    Registros Visibles: <strong id="contadorPublicados" class="text-primary ml-1">0</strong>
+                </span>
+            </div>
+
+            <!-- Grid Results (Dynamic Container) -->
+            <div id="contenedorResultados" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+                <div class="col-span-full py-10 flex flex-col items-center">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mb-3"></div>
+                    <p class="text-xs text-on-surface-variant font-bold uppercase tracking-widest">Sincronizando red...
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL DE DETALLES INTEGRADO AL DISEÑO -->
+    <div id="modalDetalles"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-surface border border-outline-variant w-full max-w-lg p-6 rounded-2xl shadow-xl relative transform scale-95 transition-transform duration-300"
+            id="modalContent">
+            <button id="btnCerrarModal"
+                class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface bg-surface-container-high hover:bg-surface-variant p-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+        class="w-full py-lg px-gutter flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-highest border-t border-outline-variant mt-auto">
+        <div class="font-headline-sm text-headline-sm text-primary">COLOMBIA UNIDA</div>
+        <div class="font-label-sm text-on-surface-variant">© 2024 COLOMBIA UNIDA. Coordinación Humanitaria Nacional.
+        </div>
+        <div class="flex flex-wrap gap-md justify-center">
+            <a class="font-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Cruz Roja
+                Colombiana</a>
+            <a class="font-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Defensa
+                Civil</a>
+            <a class="font-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Gestión del
+                Riesgo</a>
+            <a class="font-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Términos de
+                Uso</a>
+        </div>
+    </footer>
+
+    <!-- STARK-V25: MOTOR FIREBASE INYECTADO -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+        // CREDENCIALES
+        const firebaseConfig = {
+            apiKey: "AIzaSyD-31_2Z9fazqSnMfk7QL_3sQQ1Y0tuzec",
+            authDomain: "colombiaunida-228c9.firebaseapp.com",
+            databaseURL: "https://colombiaunida-228c9-default-rtdb.firebaseio.com",
+            projectId: "colombiaunida-228c9",
+            storageBucket: "colombiaunida-228c9.firebasestorage.app",
+            messagingSenderId: "561377523862",
+            appId: "1:561377523862:web:98f495acfa97d81c122ab7"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        let registrosCache = [];
+        const uiContenedor = document.getElementById('contenedorResultados');
+        const uiContador = document.getElementById('contadorPublicados');
+        const inputNombre = document.getElementById('buscadorNombre');
+        const selectCiudad = document.getElementById('filtroCiudad');
+        const modal = document.getElementById('modalDetalles');
+
+        function escapeHtml(str) { return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+
+        function normalizarCiudad(c) {
+            if (!c) return '';
+            const str = c.trim();
+            return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+        }
+
+        function tiempoRelativo(fechaISO) {
+            if (!fechaISO) return 'Reciente';
+            const diffMin = Math.floor((Date.now() - new Date(fechaISO).getTime()) / 60000);
+            if (diffMin < 1) return 'Justo ahora';
+            if (diffMin < 60) return `Hace ${diffMin} min`;
+            const horas = Math.floor(diffMin / 60);
+            if (horas < 24) return `Hace ${horas} h`;
+            return `Hace ${Math.floor(horas / 24)} d`;
+        }
+
+        // MODAL DE DETALLES
+        window.mostrarDetalles = function (personaB64) {
+            try {
+                const p = JSON.parse(decodeURIComponent(escape(atob(personaB64))));
+                const modalBody = document.getElementById('modalBody');
+
+                modalBody.innerHTML = `
+                    <div class="flex items-center gap-4 mb-6 pr-8">
+                        <div class="bg-primary-fixed text-on-primary-fixed-variant p-3 rounded-xl flex-shrink-0">
+                            <span class="material-symbols-outlined text-[32px]">verified_user</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-on-background leading-tight">${escapeHtml(p.nombre_completo)}</h3>
+                            <span class="inline-block mt-1 text-[10px] font-extrabold px-2 py-1 rounded-md bg-primary-fixed text-on-primary-fixed-variant border border-primary/20 tracking-wider">LOCALIZADO / A SALVO</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4 bg-surface-container-low p-5 rounded-xl border border-outline-variant">
+                        <div>
+                            <strong class="text-on-surface-variant uppercase tracking-widest text-[10px] block mb-1">📍 Ubicación Exacta:</strong>
+                            <p class="text-sm text-on-surface font-semibold">${escapeHtml(p.ciudad_nombre)} — ${escapeHtml(p.ubicacion)}</p>
+                        </div>
+                        <div>
+                            <strong class="text-on-surface-variant uppercase tracking-widest text-[10px] block mb-1">📝 Detalles y Estado:</strong>
+                            <p class="text-sm text-on-surface">${escapeHtml(p.descripcion || 'Sin descripción adicional reportada.')}</p>
+                        </div>
+                        <div>
+                            <strong class="text-on-surface-variant uppercase tracking-widest text-[10px] block mb-1">⏱️ Fecha del Reporte:</strong>
+                            <p class="text-sm text-primary font-semibold">${p.created_at ? new Date(p.created_at).toLocaleString('es-CO') : 'Desconocida'}</p>
+                        </div>
+                    </div>
+                `;
+
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    document.getElementById('modalContent').classList.remove('scale-95');
+                }, 10);
+            } catch (e) { console.error("Error modal", e); }
+        };
+
+        document.getElementById('btnCerrarModal').addEventListener('click', () => {
+            modal.classList.add('opacity-0');
+            document.getElementById('modalContent').classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        });
+
+        // RENDER DE TARJETAS
+        function renderizarResultados(datos) {
+            uiContenedor.innerHTML = '';
+            uiContador.innerText = datos.length;
+
+            if (datos.length === 0) {
+                uiContenedor.innerHTML = `
+                    <div class="col-span-full bg-surface border border-outline-variant p-10 text-center rounded-2xl">
+                        <h3 class="text-xl font-bold text-on-surface-variant">No se encontraron registros</h3>
+                    </div>`;
+                return;
+            }
+
+            datos.forEach(persona => {
+                const dataB64 = btoa(unescape(encodeURIComponent(JSON.stringify(persona))));
+
+                const cardHTML = `
+                    <div onclick="window.mostrarDetalles('${dataB64}')" class="bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group">
+                        <div class="p-md flex flex-col gap-sm">
+                            <div class="flex justify-between items-start">
+                                <div class="bg-surface-container rounded-lg p-sm">
+                                    <span class="material-symbols-outlined text-primary">person</span>
+                                </div>
+                                <span class="bg-primary-fixed text-on-primary-fixed-variant text-[12px] font-bold px-2 py-1 rounded-full flex items-center gap-xs">
+                                    <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                    LOCALIZADO / A SALVO
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors text-lg font-bold truncate">${escapeHtml(persona.nombre_completo)}</h3>
+                                <div class="flex items-center gap-xs text-on-surface-variant font-body-md mt-1 text-sm truncate">
+                                    <span class="material-symbols-outlined text-[18px]">location_on</span>
+                                    ${escapeHtml(persona.ubicacion)}, ${escapeHtml(persona.ciudad_nombre)}
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mt-md pt-md border-t border-outline-variant">
+                                <span class="text-outline font-label-sm flex items-center gap-xs">
+                                    <span class="material-symbols-outlined text-[16px]">schedule</span>
+                                    ${tiempoRelativo(persona.created_at)}
+                                </span>
+                                <button class="text-primary font-label-md flex items-center gap-xs hover:underline">
+                                    Ver detalles
+                                    <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                uiContenedor.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        // LÓGICA DE FILTRADO
+        function aplicarFiltros() {
+            const txt = inputNombre.value.toLowerCase().trim();
+            const ciu = selectCiudad.value;
+
+            const filtrados = registrosCache.filter(p => {
+                const matchTexto = !txt || (p.nombre_completo || '').toLowerCase().includes(txt);
+                const matchCiudad = (ciu === 'todas') || (normalizarCiudad(p.ciudad_nombre) === ciu);
+                return matchTexto && matchCiudad;
+            });
+            renderizarResultados(filtrados);
+        }
+
+        inputNombre.addEventListener('input', aplicarFiltros);
+        selectCiudad.addEventListener('change', aplicarFiltros);
+        document.getElementById('btnBuscar').addEventListener('click', aplicarFiltros);
+
+        // LECTURA DE FIREBASE Y EXTRACCIÓN DE CIUDADES
+        onValue(ref(db, 'personas'), (snapshot) => {
+            const data = snapshot.val();
+            registrosCache = [];
+            const ciudadesDinamicas = new Set();
+
+            if (data) {
+                Object.keys(data).forEach(key => {
+                    const persona = data[key];
+                    if (persona.estado === 'localizado') {
+                        registrosCache.push({ id: key, ...persona });
+                        if (persona.ciudad_nombre) {
+                            ciudadesDinamicas.add(normalizarCiudad(persona.ciudad_nombre));
+                        }
+                    }
+                });
+                registrosCache.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+            }
+
+            // Actualizar Select manteniendo la selección
+            const selectValorAnterior = selectCiudad.value;
+            selectCiudad.innerHTML = '<option value="todas">Todas las ciudades</option>';
+
+            Array.from(ciudadesDinamicas).sort().forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c;
+                opt.textContent = c;
+                selectCiudad.appendChild(opt);
+            });
+
+            if (Array.from(ciudadesDinamicas).includes(selectValorAnterior)) {
+                selectCiudad.value = selectValorAnterior;
+            }
+
+            aplicarFiltros();
+        });
+    </script>
+</body>
+
+</html>

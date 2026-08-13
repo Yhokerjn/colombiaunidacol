@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="light" lang="es" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Centros de Acopio Oficiales - COLOMBIA UNIDA</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-fixed-variant": "#12419b",
+                        "tertiary": "#715c00",
+                        "on-secondary-fixed-variant": "#930015",
+                        "on-tertiary-fixed": "#231b00",
+                        "on-tertiary-fixed-variant": "#554500",
+                        "inverse-surface": "#2e3132",
+                        "on-surface": "#191c1d",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d9dadb",
+                        "on-surface-variant": "#434652",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "on-primary-fixed": "#001849",
+                        "surface-container-highest": "#e1e3e4",
+                        "inverse-on-surface": "#f0f1f2",
+                        "background": "#f8f9fa",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#003893",
+                        "outline-variant": "#c4c6d4",
+                        "secondary": "#bb001e",
+                        "secondary-fixed": "#ffdad7",
+                        "tertiary-container": "#cca800",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed": "#410004",
+                        "surface-variant": "#e1e3e4",
+                        "on-background": "#191c1d",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-primary": "#b3c5ff",
+                        "on-primary-container": "#88a7ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#ffb3ae",
+                        "tertiary-fixed-dim": "#ecc300",
+                        "outline": "#747683",
+                        "surface-container": "#edeeef",
+                        "primary-fixed": "#dae1ff",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container-high": "#e7e8e9",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#e12531",
+                        "tertiary-fixed": "#ffe17b",
+                        "surface-tint": "#335ab4",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#002465",
+                        "on-tertiary-container": "#4d3e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "xl": "40px",
+                        "container-max": "1280px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "headline-xl-mobile": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-16 md:pb-0 pb-20">
+
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-primary dark:bg-primary border-b border-outline-variant shadow-md">
+        <div class="flex items-center gap-md">
+            <span class="font-headline-lg text-headline-lg font-black tracking-tighter text-on-primary">COLOMBIA
+                UNIDA</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-lg h-full"></nav>
+        <div class="flex items-center gap-sm">
+            <button
+                class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-md py-sm rounded-lg hover:bg-secondary transition-colors font-bold ml-sm flex items-center gap-xs shadow-sm">
+                <span class="material-symbols-outlined" style="font-size: 18px;">emergency</span> SOS
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col">
+        <!-- Hero Header -->
+        <section class="relative w-full h-[300px] md:h-[400px] flex items-end pb-lg px-gutter pt-24"
+            style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLv2lcFQbJXZTYbO2Y_QDF2fO5_sch3Or0V0hh_OKuTFWqBg296JHL3LeDtHTV9wdyg4H9uOIkYlQUwuKmD-IZdomECvJla8kS4GtIK28ju4eXnPu2XOBIiYRF1WE6FYUpwKtWLPbrDm-tp8sS5PI_ViCnqugjrtsJxjKLiY7FZrcKzHXeWDvVJ9Xk1D-ELy-zwdY1VX0WB94i_vYCR4YJqy-0mbvWVYZvhL8QXqdNawkDVl2eICJ0Ql176k'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 w-full max-w-container-max mx-auto flex flex-col gap-sm">
+                <a href="index.html"
+                    class="flex items-center text-on-primary opacity-80 hover:opacity-100 transition-opacity font-label-sm text-label-sm mb-sm w-fit">
+                    <span class="material-symbols-outlined mr-xs text-sm" data-icon="arrow_back">arrow_back</span>
+                    Volver&nbsp;
+                </a>
+                <div class="flex flex-col gap-xs">
+                    <span
+                        class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-sm py-xs rounded-full w-fit uppercase tracking-widest font-bold">
+                        RED LOGÍSTICA
+                    </span>
+                    <h1
+                        class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-primary m-0">
+                        CENTROS DE ACOPIO OFICIALES</h1>
+                    <p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl">Directorio de puntos de
+                        entrega para donaciones.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search & Filter Bar -->
+        <div class="w-full bg-surface border-b border-outline-variant shadow-sm sticky top-16 z-40">
+            <div
+                class="max-w-container-max mx-auto px-gutter py-md flex flex-col md:flex-row items-center gap-md justify-between">
+                <div class="flex w-full md:w-auto gap-sm flex-col md:flex-row flex-grow">
+                    <div class="relative w-full max-w-md">
+                        <span
+                            class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant"
+                            data-icon="search">search</span>
+                        <input id="buscadorAcopio"
+                            class="w-full pl-xl pr-sm py-sm border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-surface-variant/60 h-[48px]"
+                            placeholder="Buscar punto o dirección" type="text">
+                    </div>
+                    <div class="relative w-full md:w-64">
+                        <select id="filtroCiudad"
+                            class="w-full pl-sm pr-xl py-sm border border-outline-variant rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all appearance-none h-[48px] cursor-pointer">
+                            <option value="todas">Todas las ciudades</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none"
+                            data-icon="expand_more">expand_more</span>
+                    </div>
+                </div>
+                <div
+                    class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant w-full md:w-auto justify-end whitespace-nowrap">
+                    <span class="material-symbols-outlined text-sm" data-icon="inventory_2">inventory_2</span>
+                    Puntos Habilitados: <strong id="contadorAcopios" class="text-primary ml-1">0</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area - Bento Grid -->
+        <section class="max-w-container-max mx-auto w-full px-gutter py-xl">
+            <div id="contenedorAcopios" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+                <div class="col-span-full py-10 flex flex-col items-center">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mb-3"></div>
+                    <p class="text-xs text-on-surface-variant font-bold uppercase tracking-widest">Sincronizando
+                        puntos...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- BottomNavBar (Mobile) -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface border-t border-outline-variant rounded-t-xl shadow-lg">
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-lg"
+            href="index.html">
+            <span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+            <span class="font-label-sm text-label-sm">Dashboard</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-lg"
+            href="#">
+            <span class="material-symbols-outlined mb-1" data-icon="map">map</span>
+            <span class="font-label-sm text-label-sm">Map</span>
+        </a>
+        <a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:bg-surface-container-high transition-all active:translate-y-[-2px] duration-200"
+            href="#">
+            <span class="material-symbols-outlined mb-1" data-icon="inventory_2">inventory_2</span>
+            <span class="font-label-sm text-label-sm">Resources</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-lg"
+            href="personas.html">
+            <span class="material-symbols-outlined mb-1" data-icon="emergency_record">cloud_upload</span>
+            <span class="font-label-sm text-label-sm">Reports</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer
+        class="w-full py-lg px-gutter flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-highest border-t border-outline pb-24 md:pb-lg mt-auto">
+        <div class="flex flex-col items-center md:items-start gap-xs">
+            <span class="font-headline-sm text-headline-sm font-bold text-secondary">COLOMBIA UNIDA</span>
+            <p class="text-on-background font-body-md text-body-md text-sm text-center md:text-left">
+                © 2024 COLOMBIA UNIDA - Plataforma de Respuesta Humanitaria
+            </p>
+        </div>
+        <div
+            class="flex flex-wrap justify-center md:justify-end gap-md md:gap-lg font-label-sm text-label-sm text-on-surface-variant">
+            <a class="hover:text-primary transition-colors" href="#">Cruz Roja Colombiana</a>
+            <a class="hover:text-primary transition-colors" href="#">Defensa Civil</a>
+            <a class="hover:text-primary transition-colors" href="#">Gestión del Riesgo UNGRD</a>
+            <a class="hover:text-primary transition-colors" href="#">Línea 123</a>
+        </div>
+    </footer>
+
+    <!-- STARK-V25: MOTOR FIREBASE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD-31_2Z9fazqSnMfk7QL_3sQQ1Y0tuzec",
+            authDomain: "colombiaunida-228c9.firebaseapp.com",
+            databaseURL: "https://colombiaunida-228c9-default-rtdb.firebaseio.com",
+            projectId: "colombiaunida-228c9",
+            storageBucket: "colombiaunida-228c9.firebasestorage.app",
+            messagingSenderId: "561377523862",
+            appId: "1:561377523862:web:98f495acfa97d81c122ab7"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        let registrosCache = [];
+        const uiContenedor = document.getElementById('contenedorAcopios');
+        const uiContador = document.getElementById('contadorAcopios');
+        const inputBuscador = document.getElementById('buscadorAcopio');
+        const selectCiudad = document.getElementById('filtroCiudad');
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        function normalizarCiudad(c) {
+            if (!c) return '';
+            const str = c.trim();
+            return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+        }
+
+        function renderizarResultados(datos) {
+            uiContenedor.innerHTML = '';
+            uiContador.innerText = datos.length;
+
+            if (datos.length === 0) {
+                uiContenedor.innerHTML = `
+                    <div class="col-span-full bg-surface border border-outline-variant p-10 text-center rounded-2xl flex flex-col items-center justify-center">
+                        <span class="material-symbols-outlined text-[48px] text-outline mb-4">inventory_2</span>
+                        <h3 class="text-xl font-bold text-on-surface-variant">No hay centros reportados</h3>
+                        <p class="text-on-surface-variant mt-2 text-sm">Aún no se han registrado puntos con estos criterios.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            datos.forEach(punto => {
+                const nombreSeguro = escapeHtml(punto.nombre);
+                const ciudadSegura = escapeHtml(normalizarCiudad(punto.ciudad_nombre));
+                const direccionSegura = escapeHtml(punto.direccion);
+                const descSegura = escapeHtml(punto.descripcion || 'Sin indicaciones adicionales.');
+
+                const cardHTML = `
+                    <article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+                        <div class="h-48 w-full bg-surface-variant relative overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLt-gTCetkYJRppjopiK-rKHDqxOIitlMjEdYJBijg7Hgd-l8yiE6fV3asYGc5Jz42FjSY204AA792ugeVv0vtJKQ9IuiGmFbUp5Cdws3A25-Kw8xj5jQqDcFDXEXrmQ8WL3f-PtkNmFK2E4-n8YWQawCmM7P1rFg7wN9Y7j8HGKmdb6Wz6_qwzEwtccjoyj6zRkxNPRzd3oyPZpX72jBt-nXLfWS85dz0hgJ8hbr7qf7oP01ZVt5HA9J2xm" alt="Donaciones">
+                            <div class="absolute top-sm right-sm bg-[#198754] text-white font-label-sm text-label-sm px-sm py-xs rounded-full flex items-center gap-xs shadow-md">
+                                <span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span>
+                                RECIBIENDO DONACIONES
+                            </div>
+                        </div>
+                        <div class="p-md flex flex-col flex-grow">
+                            <h2 class="font-headline-md text-headline-md text-on-surface mb-sm">${nombreSeguro}</h2>
+                            <div class="flex flex-col gap-sm mb-md flex-grow">
+                                <div class="flex items-start gap-sm text-on-surface-variant font-body-md text-body-md">
+                                    <span class="material-symbols-outlined text-primary shrink-0 mt-xs" data-icon="location_on">location_on</span>
+                                    <span>${direccionSegura}, ${ciudadSegura}</span>
+                                </div>
+                                <div class="flex items-start gap-sm text-on-surface-variant font-body-md text-body-md mt-sm bg-surface-container-low p-sm rounded-lg border border-outline-variant/50">
+                                    <span class="material-symbols-outlined text-tertiary shrink-0 mt-xs" data-icon="shopping_basket">info</span>
+                                    <div>
+                                        <strong class="block text-on-surface text-sm mb-xs">Información adicional:</strong>
+                                        <span class="text-sm">${descSegura}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-md border-t border-outline-variant/50">
+                                <button class="w-full bg-primary text-on-primary h-[48px] rounded-lg font-label-md text-label-md font-bold flex items-center justify-center gap-sm hover:bg-primary-container transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined" data-icon="directions">directions</span>
+                                    Cómo llegar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                `;
+                uiContenedor.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        function aplicarFiltroBusqueda() {
+            const texto = inputBuscador.value.toLowerCase().trim();
+            const ciudad = selectCiudad.value;
+
+            const filtrados = registrosCache.filter(p => {
+                const matchTexto = !texto || (p.nombre || '').toLowerCase().includes(texto) || (p.direccion || '').toLowerCase().includes(texto);
+                const matchCiudad = (ciudad === 'todas') || (normalizarCiudad(p.ciudad_nombre) === ciudad);
+                return matchTexto && matchCiudad;
+            });
+            renderizarResultados(filtrados);
+        }
+
+        inputBuscador.addEventListener('input', aplicarFiltroBusqueda);
+        selectCiudad.addEventListener('change', aplicarFiltroBusqueda);
+
+        // LEER DATA DE FIREBASE Y EXTRAER CIUDADES DINÁMICAS
+        onValue(ref(db, 'acopios'), (snapshot) => {
+            const data = snapshot.val();
+            registrosCache = [];
+            const ciudadesDinamicas = new Set();
+
+            if (data) {
+                Object.keys(data).forEach(key => {
+                    const acopio = data[key];
+                    registrosCache.push({ id: key, ...acopio });
+                    if (acopio.ciudad_nombre) {
+                        ciudadesDinamicas.add(normalizarCiudad(acopio.ciudad_nombre));
+                    }
+                });
+            }
+
+            const selectValorAnterior = selectCiudad.value;
+            selectCiudad.innerHTML = '<option value="todas">Todas las ciudades</option>';
+
+            Array.from(ciudadesDinamicas).sort().forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c;
+                opt.textContent = c;
+                selectCiudad.appendChild(opt);
+            });
+
+            if (Array.from(ciudadesDinamicas).includes(selectValorAnterior)) {
+                selectCiudad.value = selectValorAnterior;
+            }
+
+            aplicarFiltroBusqueda();
+        });
+    </script>
+</body>
+
+</html>
