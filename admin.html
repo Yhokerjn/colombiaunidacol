@@ -7,10 +7,9 @@
     <title>ACCESO RESTRINGIDO - MANDO TÁCTICO</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
 
     <script id="tailwind-config">
@@ -92,16 +91,6 @@
                         "body-md": ["Inter"],
                         "body-lg": ["Inter"],
                         "label-md": ["JetBrains Mono"]
-                    },
-                    "fontSize": {
-                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
-                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
-                        "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }]
                     }
                 }
             }
@@ -130,8 +119,8 @@
                     <h1 class="font-headline-lg text-headline-lg uppercase tracking-tight">ACCESO RESTRINGIDO - MANDO
                         TÁCTICO</h1>
                 </div>
-                <p class="font-body-md text-body-md text-primary-fixed-dim opacity-90">Consola maestra para inyectar
-                    datos, editar y purgar registros en tiempo real</p>
+                <p class="font-body-md text-body-md text-primary-fixed-dim opacity-90">Consola maestra para inyectar,
+                    aprobar, editar y purgar registros en tiempo real</p>
             </div>
             <a class="flex items-center gap-sm font-label-md text-label-md text-on-primary hover:text-inverse-primary transition-colors bg-white/10 px-md py-sm rounded"
                 href="index.html">
@@ -185,17 +174,6 @@
                             <textarea id="ac_desc"
                                 class="w-full bg-white border border-outline-variant rounded p-sm focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-on-surface"
                                 placeholder="Qué se necesita, horarios de recepción..." rows="3"></textarea>
-                        </div>
-
-                        <input type="file" id="ac_foto" accept="image/*" class="hidden"
-                            onchange="document.getElementById('ac_label_foto').innerText = this.files[0]?.name || 'Añadir Foto (Opcional)'">
-                        <div onclick="document.getElementById('ac_foto').click()"
-                            class="border-2 border-dashed border-outline-variant rounded-lg p-lg flex flex-col items-center justify-center text-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer">
-                            <span class="material-symbols-outlined text-outline mb-sm text-3xl">add_a_photo</span>
-                            <span id="ac_label_foto" class="font-label-md text-label-md text-primary">Añadir Foto
-                                (Opcional)</span>
-                            <span class="font-label-sm text-label-sm text-on-surface-variant mt-xs">JPG, PNG max
-                                5MB</span>
                         </div>
 
                         <button type="submit"
@@ -261,108 +239,10 @@
                                 placeholder="Detalles importantes..." rows="2"></textarea>
                         </div>
 
-                        <input type="file" id="ho_foto" accept="image/*" class="hidden"
-                            onchange="document.getElementById('ho_label_foto').innerText = this.files[0]?.name || 'Añadir Foto (Opcional)'">
-                        <div onclick="document.getElementById('ho_foto').click()"
-                            class="border-2 border-dashed border-outline-variant rounded-lg p-md flex flex-col items-center justify-center text-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer">
-                            <span class="material-symbols-outlined text-outline mb-xs">add_a_photo</span>
-                            <span id="ho_label_foto" class="font-label-sm text-label-sm text-primary">Añadir Foto
-                                (Opcional)</span>
-                        </div>
-
                         <button type="submit"
                             class="mt-sm bg-primary text-on-primary font-label-md text-label-md py-md px-lg rounded hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center justify-center gap-sm">
                             <span class="material-symbols-outlined">publish</span>
-                            PUBLICAR HOSPEDAJE EN LA RED
-                        </button>
-                    </form>
-                </section>
-
-                <!-- STARK-V25: Formulario de Solicitud de Apoyo -->
-                <section class="bg-surface rounded-xl border border-outline-variant shadow-sm overflow-hidden">
-                    <div
-                        class="bg-surface-container-low px-md py-sm border-b border-outline-variant flex items-center gap-sm">
-                        <span class="material-symbols-outlined text-primary">volunteer_activism</span>
-                        <h2 class="font-headline-md text-headline-md text-primary">PUBLICAR SOLICITUD DE APOYO</h2>
-                    </div>
-                    <form id="formApoyo" class="p-lg flex flex-col gap-md">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-                            <div>
-                                <label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">¿Qué se
-                                    necesita?</label>
-                                <input id="ap_titulo" required
-                                    class="w-full bg-white border border-outline-variant rounded p-sm focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-on-surface"
-                                    placeholder="Ej. 10 Voluntarios, Retroexcavadora..." type="text" />
-                            </div>
-                            <div>
-                                <label
-                                    class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Categoría</label>
-                                <select id="ap_categoria"
-                                    class="w-full bg-white border border-outline-variant rounded p-sm focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-on-surface">
-                                    <option value="Gente">Gente para ayudar</option>
-                                    <option value="Comida">Comida y agua</option>
-                                    <option value="Maquinaria">Maquinaria</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-md">
-                            <div class="md:col-span-5">
-                                <label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Ciudad /
-                                    Municipio</label>
-                                <input id="ap_ciudad" required
-                                    class="w-full bg-white border border-outline-variant rounded p-sm focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-on-surface"
-                                    placeholder="Ciudad" type="text" />
-                            </div>
-                            <div class="md:col-span-4">
-                                <label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Dirección
-                                    Exacta</label>
-                                <input id="ap_direccion" required
-                                    class="w-full bg-white border border-outline-variant rounded p-sm focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-on-surface"
-                                    placeholder="Dirección" type="text" />
-                            </div>
-                            <div class="md:col-span-3">
-                                <label
-                                    class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Urgencia</label>
-                                <select id="ap_urgencia"
-                                    class="w-full bg-white border border-outline-variant rounded p-sm focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-on-surface">
-                                    <option value="Crítica">Crítica</option>
-                                    <option value="Media">Media</option>
-                                    <option value="Baja">Baja</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-md">
-                            <div class="md:col-span-4">
-                                <label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Teléfono
-                                    Contacto</label>
-                                <input id="ap_contacto" required
-                                    class="w-full bg-white border border-outline-variant rounded p-sm focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-on-surface"
-                                    placeholder="Número" type="tel" />
-                            </div>
-                            <div class="md:col-span-8">
-                                <label
-                                    class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Descripción
-                                    Detallada</label>
-                                <input id="ap_desc"
-                                    class="w-full bg-white border border-outline-variant rounded p-sm focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-on-surface"
-                                    placeholder="Detalles específicos para quien vaya a ayudar..." type="text" />
-                            </div>
-                        </div>
-
-                        <!-- STARK-V25: Foto para Apoyo -->
-                        <input type="file" id="ap_foto" accept="image/*" class="hidden"
-                            onchange="document.getElementById('ap_label_foto').innerText = this.files[0]?.name || 'Añadir Foto (Opcional)'">
-                        <div onclick="document.getElementById('ap_foto').click()"
-                            class="border-2 border-dashed border-outline-variant rounded-lg p-md flex flex-col items-center justify-center text-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer">
-                            <span class="material-symbols-outlined text-outline mb-xs">add_a_photo</span>
-                            <span id="ap_label_foto" class="font-label-sm text-label-sm text-primary">Añadir Foto
-                                (Opcional)</span>
-                        </div>
-
-                        <button type="submit"
-                            class="mt-sm bg-primary text-on-primary font-label-md text-label-md py-md px-lg rounded hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center justify-center gap-sm">
-                            <span class="material-symbols-outlined">publish</span>
-                            PUBLICAR APOYO EN LA RED
+                            PUBLICAR HOSPEDAJE (MODO ADMIN)
                         </button>
                     </form>
                 </section>
@@ -387,6 +267,16 @@
 
                     <div
                         class="p-md flex-grow flex flex-col gap-lg bg-surface-container-lowest overflow-y-auto max-h-[80vh]">
+
+                        <!-- Hospedajes (CON MODERACIÓN) -->
+                        <div>
+                            <div class="flex justify-between items-center mb-sm border-b border-outline-variant pb-xs">
+                                <h3 class="font-label-md text-label-md text-on-surface font-bold">Hospedajes / Refugios
+                                    (<span id="countHospedajes">0</span>)</h3>
+                            </div>
+                            <ul id="adminHospedajes" class="flex flex-col gap-sm"></ul>
+                        </div>
+
                         <!-- Personas -->
                         <div>
                             <div class="flex justify-between items-center mb-sm border-b border-outline-variant pb-xs">
@@ -403,24 +293,6 @@
                                     (<span id="countAcopios">0</span>)</h3>
                             </div>
                             <ul id="adminAcopios" class="flex flex-col gap-sm"></ul>
-                        </div>
-
-                        <!-- Hospedajes -->
-                        <div>
-                            <div class="flex justify-between items-center mb-sm border-b border-outline-variant pb-xs">
-                                <h3 class="font-label-md text-label-md text-on-surface font-bold">Hospedajes / Refugios
-                                    (<span id="countHospedajes">0</span>)</h3>
-                            </div>
-                            <ul id="adminHospedajes" class="flex flex-col gap-sm"></ul>
-                        </div>
-
-                        <!-- Solicitudes de Apoyo -->
-                        <div>
-                            <div class="flex justify-between items-center mb-sm border-b border-outline-variant pb-xs">
-                                <h3 class="font-label-md text-label-md text-on-surface font-bold">Solicitudes de Apoyo
-                                    (<span id="countApoyos">0</span>)</h3>
-                            </div>
-                            <ul id="adminApoyos" class="flex flex-col gap-sm"></ul>
                         </div>
                     </div>
                 </section>
@@ -458,7 +330,6 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import { getDatabase, ref, push, set, onValue, remove, get, update } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-        import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyD-31_2Z9fazqSnMfk7QL_3sQQ1Y0tuzec",
@@ -472,7 +343,6 @@
 
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
-        const storage = getStorage(app);
 
         // --- SISTEMA DE ELIMINACIÓN ---
         window.borrarRegistro = async function (tabla, id) {
@@ -480,6 +350,16 @@
                 try {
                     await remove(ref(db, tabla + '/' + id));
                 } catch (error) { alert('Error al purgar.'); console.error(error); }
+            }
+        };
+
+        // --- SISTEMA DE MODERACIÓN DE HOSPEDAJES ---
+        window.cambiarEstadoHospedaje = async function (id, nuevoEstado) {
+            const accion = nuevoEstado === 'activo' ? 'PUBLICAR' : 'OCULTAR';
+            if (confirm(`⚠️ TÁCTICO: ¿Deseas ${accion} este refugio para que la gente lo vea?`)) {
+                try {
+                    await update(ref(db, 'hospedajes/' + id), { estado: nuevoEstado });
+                } catch (error) { alert('Error al actualizar estado.'); console.error(error); }
             }
         };
 
@@ -499,7 +379,6 @@
                     document.getElementById('modalEdicionTitulo').innerText = `EDITAR: ${tabla.toUpperCase()}`;
 
                     Object.keys(data).forEach(key => {
-                        // Ignoramos campos que no deben editarse con texto simple
                         if (key === 'foto_url' || key === 'created_at') return;
 
                         const labelText = key.replace(/_/g, ' ').toUpperCase();
@@ -552,46 +431,57 @@
             return Object.entries(dataObj).sort((a, b) => new Date(b[1].created_at || 0) - new Date(a[1].created_at || 0));
         }
 
-        function procesarImagenLocal(file) {
-            return new Promise((resolve, reject) => {
-                if (!file) { resolve(null); return; }
-                if (!file.type.match('image.*')) { alert('Jefe, seleccione un archivo de imagen válido.'); resolve(null); return; }
-
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    const img = new Image();
-                    img.onload = function () {
-                        const canvas = document.createElement('canvas');
-                        const MAX_WIDTH = 800; const MAX_HEIGHT = 800;
-                        let width = img.width; let height = img.height;
-
-                        if (width > height) {
-                            if (width > MAX_WIDTH) { height *= MAX_WIDTH / width; width = MAX_WIDTH; }
-                        } else {
-                            if (height > MAX_HEIGHT) { width *= MAX_HEIGHT / height; height = MAX_HEIGHT; }
-                        }
-
-                        canvas.width = width; canvas.height = height;
-                        const ctx = canvas.getContext('2d');
-                        ctx.drawImage(img, 0, 0, width, height);
-                        resolve(canvas.toDataURL('image/jpeg', 0.7));
-                    }
-                    img.src = event.target.result;
-                }
-                reader.readAsDataURL(file);
-            });
-        }
-
         // --- RADARES Y PINTADO DE LISTAS ---
+
+        // 1. HOSPEDAJES (CON BOTONES DE APROBAR)
+        onValue(ref(db, 'hospedajes'), (snapshot) => {
+            const arr = ordenarPorFecha(snapshot.val());
+            const container = document.getElementById('adminHospedajes');
+            document.getElementById('countHospedajes').innerText = arr.length;
+            container.innerHTML = '';
+
+            if (arr.length === 0) {
+                container.innerHTML = `<div class="bg-surface-dim border border-dashed border-outline-variant rounded p-md flex flex-col items-center justify-center text-center text-on-surface-variant py-xl"><span class="material-symbols-outlined mb-2 text-outline">home_work</span><span class="font-label-md text-label-md">No hay hospedajes registrados.</span></div>`;
+            }
+
+            arr.forEach(([id, h]) => {
+                // Identificar si está pendiente de aprobación
+                const isPendiente = h.estado === 'pendiente';
+                const borderColor = isPendiente ? 'border-l-[#d4a017]' : 'border-l-[#10b981]';
+
+                const badgeHtml = isPendiente
+                    ? '<span class="bg-[#d4a017] text-white font-label-sm text-[10px] px-1.5 py-0.5 rounded">PENDIENTE DE APROBACIÓN</span>'
+                    : '<span class="bg-[#10b981] text-white font-label-sm text-[10px] px-1.5 py-0.5 rounded">PÚBLICO</span>';
+
+                const btnAprobar = isPendiente
+                    ? `<button onclick="window.cambiarEstadoHospedaje('${id}', 'activo')" class="text-[#10b981] hover:text-[#047857] p-1 flex items-center" title="Aprobar y Publicar"><span class="material-symbols-outlined text-[24px]">check_circle</span></button>`
+                    : `<button onclick="window.cambiarEstadoHospedaje('${id}', 'pendiente')" class="text-[#d4a017] hover:text-[#b0800c] p-1 flex items-center" title="Ocultar (Pausar)"><span class="material-symbols-outlined text-[24px]">pause_circle</span></button>`;
+
+                container.insertAdjacentHTML('beforeend', `
+                    <li class="bg-surface border border-outline-variant rounded p-sm flex items-center gap-md group border-l-4 ${borderColor}">
+                        <div class="flex flex-col flex-grow">
+                            <span class="font-body-md text-body-md font-medium text-on-surface">${escapeHtml(h.nombre)}</span>
+                            <div class="flex items-center gap-2 mt-1">
+                                ${badgeHtml}
+                                <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">Cap: ${escapeHtml(h.capacidad)} | <span class="material-symbols-outlined text-[12px]">location_on</span> ${escapeHtml(h.ciudad_nombre)}</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-1 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity items-center">
+                            ${btnAprobar}
+                            <button onclick="window.abrirModalEdicion('hospedajes', '${id}')" class="text-outline hover:text-primary p-1" title="Editar"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+                            <button onclick="window.borrarRegistro('hospedajes', '${id}')" class="text-outline hover:text-error p-1" title="Purgar"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+                        </div>
+                    </li>
+                `);
+            });
+        });
+
+        // 2. PERSONAS
         onValue(ref(db, 'personas'), (snapshot) => {
             const arr = ordenarPorFecha(snapshot.val());
             const container = document.getElementById('adminPersonas');
             document.getElementById('countPersonas').innerText = arr.length;
             container.innerHTML = '';
-
-            if (arr.length === 0) {
-                container.innerHTML = `<div class="bg-surface-dim border border-dashed border-outline-variant rounded p-md flex flex-col items-center justify-center text-center text-on-surface-variant py-xl"><span class="material-symbols-outlined mb-2 text-outline">group_off</span><span class="font-label-md text-label-md">No hay personas reportadas.</span></div>`;
-            }
 
             arr.forEach(([id, p]) => {
                 const badge = p.estado === 'localizado'
@@ -599,7 +489,7 @@
                     : '<span class="bg-secondary text-on-secondary font-label-sm text-[10px] px-1.5 py-0.5 rounded">DESAPARECIDO</span>';
 
                 container.insertAdjacentHTML('beforeend', `
-                    <li class="bg-surface border border-outline-variant rounded p-sm flex items-center justify-between group">
+                    <li class="bg-surface border border-outline-variant rounded p-sm flex items-center justify-between group border-l-4 border-l-outline-variant">
                         <div class="flex flex-col">
                             <span class="font-body-md text-body-md font-medium text-on-surface">${escapeHtml(p.nombre_completo)}</span>
                             <div class="flex items-center gap-sm mt-xs">
@@ -616,24 +506,16 @@
             });
         });
 
+        // 3. ACOPIOS
         onValue(ref(db, 'acopios'), (snapshot) => {
             const arr = ordenarPorFecha(snapshot.val());
             const container = document.getElementById('adminAcopios');
             document.getElementById('countAcopios').innerText = arr.length;
             container.innerHTML = '';
 
-            if (arr.length === 0) {
-                container.innerHTML = `<div class="bg-surface-dim border border-dashed border-outline-variant rounded p-md flex flex-col items-center justify-center text-center text-on-surface-variant py-xl"><span class="material-symbols-outlined mb-2 text-outline">inventory_2</span><span class="font-label-md text-label-md">No hay centros de acopio.</span></div>`;
-            }
-
             arr.forEach(([id, a]) => {
-                const imgHtml = a.foto_url
-                    ? `<img class="w-12 h-12 rounded object-cover border border-outline-variant bg-surface-dim shrink-0" src="${a.foto_url}" />`
-                    : `<div class="w-12 h-12 rounded border border-outline-variant bg-surface-dim flex items-center justify-center text-outline shrink-0"><span class="material-symbols-outlined text-[20px]">image</span></div>`;
-
                 container.insertAdjacentHTML('beforeend', `
-                    <li class="bg-surface border border-outline-variant rounded p-sm flex items-center gap-md group">
-                        ${imgHtml}
+                    <li class="bg-surface border border-outline-variant rounded p-sm flex items-center gap-md group border-l-4 border-l-outline-variant">
                         <div class="flex flex-col flex-grow">
                             <span class="font-body-md text-body-md font-medium text-on-surface">${escapeHtml(a.nombre)}</span>
                             <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> ${escapeHtml(a.ciudad_nombre)}</span>
@@ -647,108 +529,14 @@
             });
         });
 
-        onValue(ref(db, 'hospedajes'), (snapshot) => {
-            const arr = ordenarPorFecha(snapshot.val());
-            const container = document.getElementById('adminHospedajes');
-            document.getElementById('countHospedajes').innerText = arr.length;
-            container.innerHTML = '';
-
-            if (arr.length === 0) {
-                container.innerHTML = `<div class="bg-surface-dim border border-dashed border-outline-variant rounded p-md flex flex-col items-center justify-center text-center text-on-surface-variant py-xl"><span class="material-symbols-outlined mb-2 text-outline">home_work</span><span class="font-label-md text-label-md">No hay hospedajes registrados.</span></div>`;
-            }
-
-            arr.forEach(([id, h]) => {
-                const imgHtml = h.foto_url
-                    ? `<img class="w-12 h-12 rounded object-cover border border-outline-variant bg-surface-dim shrink-0" src="${h.foto_url}" />`
-                    : `<div class="w-12 h-12 rounded border border-outline-variant bg-surface-dim flex items-center justify-center text-outline shrink-0"><span class="material-symbols-outlined text-[20px]">image</span></div>`;
-
-                container.insertAdjacentHTML('beforeend', `
-                    <li class="bg-surface border border-outline-variant rounded p-sm flex items-center gap-md group">
-                        ${imgHtml}
-                        <div class="flex flex-col flex-grow">
-                            <span class="font-body-md text-body-md font-medium text-on-surface">${escapeHtml(h.nombre)}</span>
-                            <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">Cap: ${escapeHtml(h.capacidad)} | <span class="material-symbols-outlined text-[12px]">location_on</span> ${escapeHtml(h.ciudad_nombre)}</span>
-                        </div>
-                        <div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <button onclick="window.abrirModalEdicion('hospedajes', '${id}')" class="text-outline hover:text-primary p-1" title="Editar"><span class="material-symbols-outlined text-[20px]">edit</span></button>
-                            <button onclick="window.borrarRegistro('hospedajes', '${id}')" class="text-outline hover:text-error p-1" title="Purgar"><span class="material-symbols-outlined text-[20px]">delete</span></button>
-                        </div>
-                    </li>
-                `);
-            });
-        });
-
-        // STARK-V25: Radar para Apoyos con soporte de imagen
-        onValue(ref(db, 'apoyos'), (snapshot) => {
-            const arr = ordenarPorFecha(snapshot.val());
-            const container = document.getElementById('adminApoyos');
-            document.getElementById('countApoyos').innerText = arr.length;
-            container.innerHTML = '';
-
-            if (arr.length === 0) {
-                container.innerHTML = `<div class="bg-surface-dim border border-dashed border-outline-variant rounded p-md flex flex-col items-center justify-center text-center text-on-surface-variant py-xl"><span class="material-symbols-outlined mb-2 text-outline">volunteer_activism</span><span class="font-label-md text-label-md">No hay solicitudes de apoyo.</span></div>`;
-            }
-
-            arr.forEach(([id, a]) => {
-                const imgHtml = a.foto_url
-                    ? `<img class="w-12 h-12 rounded object-cover border border-outline-variant bg-surface-dim shrink-0" src="${a.foto_url}" />`
-                    : `<div class="w-12 h-12 rounded border border-outline-variant bg-surface-dim flex items-center justify-center text-outline shrink-0"><span class="material-symbols-outlined text-[20px]">volunteer_activism</span></div>`;
-
-                container.insertAdjacentHTML('beforeend', `
-                    <li class="bg-surface border border-outline-variant rounded p-sm flex items-center gap-md group">
-                        ${imgHtml}
-                        <div class="flex flex-col flex-grow">
-                            <span class="font-body-md text-body-md font-medium text-on-surface">${escapeHtml(a.titulo)}</span>
-                            <div class="flex items-center gap-sm mt-xs">
-                                <span class="bg-tertiary-container text-on-tertiary-container font-label-sm text-[10px] px-1.5 py-0.5 rounded uppercase">${escapeHtml(a.categoria)}</span>
-                                <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> ${escapeHtml(a.ciudad_nombre)}</span>
-                            </div>
-                        </div>
-                        <div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <button onclick="window.abrirModalEdicion('apoyos', '${id}')" class="text-outline hover:text-primary p-1" title="Editar"><span class="material-symbols-outlined text-[20px]">edit</span></button>
-                            <button onclick="window.borrarRegistro('apoyos', '${id}')" class="text-outline hover:text-error p-1" title="Purgar"><span class="material-symbols-outlined text-[20px]">delete</span></button>
-                        </div>
-                    </li>
-                `);
-            });
-        });
-
-        // --- SUBMIT DE FORMULARIOS ---
-        document.getElementById('formAcopio').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            const txt = btn.innerText;
-            btn.innerText = "SUBIENDO FOTO Y DATOS..."; btn.disabled = true;
-
-            try {
-                const file = document.getElementById('ac_foto').files[0];
-                const fotoUrl = await procesarImagenLocal(file);
-
-                await set(push(ref(db, 'acopios')), {
-                    nombre: document.getElementById('ac_nombre').value.trim(),
-                    ciudad_nombre: document.getElementById('ac_ciudad').value.trim(),
-                    direccion: document.getElementById('ac_direccion').value.trim(),
-                    descripcion: document.getElementById('ac_desc').value.trim(),
-                    foto_url: fotoUrl,
-                    created_at: new Date().toISOString()
-                });
-                alert("¡Centro de Acopio inyectado a la red con éxito!");
-                e.target.reset();
-                document.getElementById('ac_label_foto').innerText = 'Añadir Foto (Opcional)';
-            } catch (err) { alert("Error de base de datos."); console.error(err); }
-            btn.innerText = txt; btn.disabled = false;
-        });
-
+        // --- SUBMIT DE FORMULARIOS ADMIN ---
         document.getElementById('formHospedaje').addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = e.target.querySelector('button');
             const txt = btn.innerText;
-            btn.innerText = "SUBIENDO FOTO Y DATOS..."; btn.disabled = true;
+            btn.innerText = "INYECTANDO DATOS..."; btn.disabled = true;
 
             try {
-                const file = document.getElementById('ho_foto').files[0];
-                const fotoUrl = await procesarImagenLocal(file);
-
                 await set(push(ref(db, 'hospedajes')), {
                     nombre: document.getElementById('ho_nombre').value.trim(),
                     ciudad_nombre: document.getElementById('ho_ciudad').value.trim(),
@@ -756,41 +544,31 @@
                     capacidad: document.getElementById('ho_capacidad').value.trim(),
                     contacto: document.getElementById('ho_contacto').value.trim(),
                     descripcion: document.getElementById('ho_desc').value.trim(),
-                    foto_url: fotoUrl,
+                    estado: 'activo', // El admin aprueba directamente
                     created_at: new Date().toISOString()
                 });
                 alert("¡Hospedaje inyectado a la red con éxito!");
                 e.target.reset();
-                document.getElementById('ho_label_foto').innerText = 'Añadir Foto (Opcional)';
             } catch (err) { alert("Error de base de datos."); console.error(err); }
             btn.innerText = txt; btn.disabled = false;
         });
 
-        // STARK-V25: Submit para Formulario de Apoyo con foto integrada
-        document.getElementById('formApoyo').addEventListener('submit', async (e) => {
+        document.getElementById('formAcopio').addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = e.target.querySelector('button');
             const txt = btn.innerText;
-            btn.innerText = "INYECTANDO SOLICITUD..."; btn.disabled = true;
+            btn.innerText = "INYECTANDO DATOS..."; btn.disabled = true;
 
             try {
-                const file = document.getElementById('ap_foto').files[0];
-                const fotoUrl = await procesarImagenLocal(file);
-
-                await set(push(ref(db, 'apoyos')), {
-                    titulo: document.getElementById('ap_titulo').value.trim(),
-                    categoria: document.getElementById('ap_categoria').value.trim(),
-                    ciudad_nombre: document.getElementById('ap_ciudad').value.trim(),
-                    direccion: document.getElementById('ap_direccion').value.trim(),
-                    urgencia: document.getElementById('ap_urgencia').value.trim(),
-                    contacto: document.getElementById('ap_contacto').value.trim(),
-                    descripcion: document.getElementById('ap_desc').value.trim(),
-                    foto_url: fotoUrl,
+                await set(push(ref(db, 'acopios')), {
+                    nombre: document.getElementById('ac_nombre').value.trim(),
+                    ciudad_nombre: document.getElementById('ac_ciudad').value.trim(),
+                    direccion: document.getElementById('ac_direccion').value.trim(),
+                    descripcion: document.getElementById('ac_desc').value.trim(),
                     created_at: new Date().toISOString()
                 });
-                alert("¡Solicitud de Apoyo inyectada a la red con éxito!");
+                alert("¡Centro de Acopio inyectado a la red con éxito!");
                 e.target.reset();
-                document.getElementById('ap_label_foto').innerText = 'Añadir Foto (Opcional)';
             } catch (err) { alert("Error de base de datos."); console.error(err); }
             btn.innerText = txt; btn.disabled = false;
         });
